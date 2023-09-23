@@ -2,40 +2,54 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class NewBehaviourScript : MonoBehaviour
+
+
+// Takes and handles input and movement for a player character
+public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed; // Character Move Speed
-    public Rigidbody2D playerRigidBody; // Rigid Body (Character)
-    private Vector2 playerMoveDirection; // Player Direction (Can be used for animation as well)
 
-    // Used Fixed Update to avoid framerate movement dependency
-    private void FixedUpdate()
+    public float moveSpeed = 2f;
+    public float collisionOffset = 0.05f;
+    private Vector2 movementInput;
+    public ContactFilter2D movementFilter;
+    private Rigidbody2D rb;
+    
+    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();   
+
+    // Start is called before the first frame update
+    void Start()
     {
-        // Physics Calculations
-        playerMove();
+        rb = GetComponent<Rigidbody2D>();
+    }
+    
+    private void FixedUpdate() {
+        if (movementInput != Vector2.zero)
+        {
+            int count = rb.Cast(
+                movementInput,
+                movementFilter,
+                castCollisions,
+                moveSpeed*Time.fixedDeltaTime + collisionOffset);
+            if (count == 0)
+            {
+                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+
+            }
+        }
+    }
+   
+
+    void OnMove(InputValue movementValue)
+    {
+        movementInput = movementValue.Get<Vector2>();
        
     }
 
-    void ProcessInputs()
-    {
-        // Process Keyboard Inputs
-        float movePlayerX = Input.GetAxisRaw("Horizontal"); // 0 or 1 for keyboard input
-        float movePlayerY = Input.GetAxisRaw("Vertical");   // Get Vertical Movement
-        // Use Get Axis if wanting to add controller support - stretch goal
-        playerMoveDirection = new Vector2(movePlayerX, movePlayerY).normalized;
+   
 
-    }
+    
 
-    void playerMove()
-    {
-        // Move the player
-        playerRigidBody.velocity = new Vector2(playerMoveDirection.x * moveSpeed, playerMoveDirection.y * moveSpeed);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       ProcessInputs(); 
-    }
+   
 }
