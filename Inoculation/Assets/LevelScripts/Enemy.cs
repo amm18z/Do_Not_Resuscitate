@@ -13,16 +13,17 @@ public class Enemy : MonoBehaviour
 
     private int currentWaypointIndex = 0;
 
-    public int getSpeed() { return speed; }
+    public int getSpeed() { return speed / 10; }
     public int getHealth() { return health; }
     public int getStrength() { return strength; }
     public void damage(int damagetaken)
     {
         health -= damagetaken;
-        if(health <= 0)
-        {
-            GameObject.Destroy(this.gameObject);
-        }
+    }
+
+    public void destroyEnemy()
+    {
+        GameObject.Destroy(this.gameObject);
     }
 
     public int getWaypointIndex() { return currentWaypointIndex; }
