@@ -14,6 +14,8 @@ public class FPSCounter : MonoBehaviour
     private int _averageFromAmount = 30;
     private int _averageCounter = 0;
     private int currAvg;
+    
+   
  
     void Awake()
     {
@@ -24,6 +26,7 @@ public class FPSCounter : MonoBehaviour
             }
             frameRates = new int[_averageFromAmount];
         }
+        
     }
     void Update()
     {
