@@ -1,1 +1,6 @@
-
+public void switchLevel()
+{
+    SceneManager.LoadScene("Level 2");
+}
+//Place the scene's name between the quotations to use and must have "using UnityEngine.SceneManager" 
+//also works with scene's index as well
