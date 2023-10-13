@@ -6,14 +6,10 @@ using UnityEngine.InputSystem;
 
 
 
-
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
-    
-    
-    
-    
+
     public float moveSpeed = 2f; // speed serialized
     public float collisionOffset = 0.05f; // how far the player can be + the collision box
     private Vector2 movementInput; // movement input
@@ -47,6 +43,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+   
 
     void OnMove(InputValue movementValue)
     {

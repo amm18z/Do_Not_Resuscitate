@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private int speed = 10;
+    private int speed = 5;
     [SerializeField]
     private int health = 100;
     [SerializeField]

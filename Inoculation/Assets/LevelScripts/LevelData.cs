@@ -50,7 +50,6 @@ public class LevelData : MonoBehaviour
         // If there is an active wave then the enemies should be moved along the path
         if (waveIsActive)
         {
-            Debug.Log("Path step");
             pathStep();
         }
     }
@@ -107,7 +106,6 @@ public class LevelData : MonoBehaviour
 
     public void nextWave()
     {
-        if (currentWave == waveCount) return;
         waveIsActive = true;
         StartCoroutine("runWave");
     }
@@ -127,10 +125,8 @@ public class LevelData : MonoBehaviour
             // Adds the enemy to the list of active enemies in the game
             activeEnemies.Add(spawnedEnemy);
 
-            Enemy enemyData = spawnedEnemy.GetComponent<Enemy>();
-
             // Removes the enemy strength from the current wave strength
-            waveStrengths[currentWave] -= enemyData.getStrength();
+            waveStrengths[currentWave] -= 10;
 
             // Waits for 1 second before continuing the loop
             yield return new WaitForSeconds(1);
