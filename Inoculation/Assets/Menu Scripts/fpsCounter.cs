@@ -57,6 +57,7 @@ public class FPSCounter : MonoBehaviour
                 var x when x < 0 => "< 0",
                 _ => "?"
             };
+            
         }
     }
 }
