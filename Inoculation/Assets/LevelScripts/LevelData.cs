@@ -21,6 +21,8 @@ public class LevelData : MonoBehaviour
     [SerializeField]
     private EnemyType levelEnemyType;
     private List<GameObject> activeEnemies;
+
+    private int baseEnemySpawningDelay = 6;
     
 
     // Start is called before the first frame update
@@ -133,7 +135,7 @@ public class LevelData : MonoBehaviour
             waveStrengths[currentWave] -= enemyData.getStrength();
 
             // Waits for 1 second before continuing the loop
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(baseEnemySpawningDelay - currentWave);
         }
         
         // After all the enemies have been spawned, continue waiting until there are no longer any enemies on the screen
