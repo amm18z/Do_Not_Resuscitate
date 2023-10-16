@@ -5,6 +5,9 @@ using UnityEngine;
 public class LevelData : MonoBehaviour
 {
     [SerializeField]
+    private bool debugMode = false;
+
+    [SerializeField]
     private int health = 100;
     [SerializeField]
     private int levelDifficulty = 100;
@@ -44,7 +47,7 @@ public class LevelData : MonoBehaviour
     void Update()
     {
         // Temporary action to trigger the start of the next wave
-        if (!waveIsActive && Input.GetKeyDown(KeyCode.Space))
+        if (debugMode && !waveIsActive && Input.GetKeyDown(KeyCode.Space))
         {
             nextWave();
         }
@@ -109,8 +112,11 @@ public class LevelData : MonoBehaviour
 
     public void nextWave()
     {
-        if (currentWave == waveCount) return;
+        if (currentWave == waveCount || waveIsActive) return;
         waveIsActive = true;
+
+        // Hide the begin wave UI elements
+
         StartCoroutine("runWave");
     }
 
