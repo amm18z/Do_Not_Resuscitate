@@ -73,7 +73,7 @@ public class LevelData : MonoBehaviour
             pathStep();
             stillAlive();
         }
-        else if(currentWave == waveCount)
+        else if(stillAlive() && currentWave == waveCount)
         {
             // Have completed all waves in the level
             // Trigger game won UI screen
@@ -173,11 +173,13 @@ public class LevelData : MonoBehaviour
         waveIsActive = false;
     }
 
-    private void stillAlive()
+    private bool stillAlive()
     {
         if (health <= 0)
         {
             // End level and trigger the lost game UI screen
+            return false;
         }
+        return true;
     }
 }
