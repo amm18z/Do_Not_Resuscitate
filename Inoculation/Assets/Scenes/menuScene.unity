@@ -842,6 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 382143894}
+  locationText: {fileID: 1297656585}
 --- !u!114 &382143894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2864,7 +2865,6 @@ GameObject:
   - component: {fileID: 1297656583}
   - component: {fileID: 1297656586}
   - component: {fileID: 1297656585}
-  - component: {fileID: 1297656584}
   m_Layer: 5
   m_Name: playerLocationDebug
   m_TagString: Untagged
@@ -2891,19 +2891,6 @@ RectTransform:
   m_AnchoredPosition: {x: -514.2909, y: 1608}
   m_SizeDelta: {x: 309.7121, y: 50}
   m_Pivot: {x: 0.99999994, y: 13.178653}
---- !u!114 &1297656584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297656582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb777000be31d4a88868cbbdbdbab7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: {fileID: 1297656585}
 --- !u!114 &1297656585
 MonoBehaviour:
   m_ObjectHideFlags: 0

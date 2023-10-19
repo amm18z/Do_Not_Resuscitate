@@ -1,55 +1,61 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class FPSCounter : MonoBehaviour
+public class CombinedScript : MonoBehaviour
 {
     public TextMeshProUGUI Text;
- 
     private Dictionary<int, string> CachedNumberStrings = new();
     private int[] frameRates;
     private int cacheNum = 300;
     private int _averageFromAmount = 30;
     private int _averageCounter = 0;
     private int currAvg;
-    
-   
- 
-    void Awake()
+    private bool isF3Pressed = false;
+
+    private GameObject player;
+    public TextMeshProUGUI locationText;
+
+    private KeyCode toggleKey = KeyCode.F3; // Key to toggle the Text
+
+    private void Awake()
     {
-        // Cache strings and create array
+        for (int i = 0; i < cacheNum; i++)
         {
-            for (int i = 0; i < cacheNum; i++) {
-                CachedNumberStrings[i] = i.ToString();
-            }
-            frameRates = new int[_averageFromAmount];
+            CachedNumberStrings[i] = i.ToString();
         }
-        
+        frameRates = new int[_averageFromAmount];
+
+        player = GameObject.Find("playerObject");
     }
+
     void Update()
     {
-        // Sample
+        if (Input.GetKeyDown(toggleKey))
         {
-            var currFrame = (int)Math.Round(1f / Time.smoothDeltaTime); 
-            frameRates[_averageCounter] = currFrame;
+            isF3Pressed = !isF3Pressed;
+            Text.enabled = isF3Pressed; // Enable or disable the Text component
+            locationText.enabled = isF3Pressed; // Enable or disable the locationText component
         }
- 
-        // Average
+
+        if (isF3Pressed)
         {
+            // FPS Counter
+            // Sample
+            var currFrame = (int)Math.Round(1f / Time.smoothDeltaTime);
+            frameRates[_averageCounter] = currFrame;
+
+            // Average
             var average = 0f;
- 
-            foreach (var frameRate in frameRates) {
+            foreach (var frameRate in frameRates)
+            {
                 average += frameRate;
             }
- 
             currAvg = (int)Math.Round(average / _averageFromAmount);
             _averageCounter = (_averageCounter + 1) % _averageFromAmount;
-        }
- 
-        // Assign to UI
-        {
+
+            // Assign to UI
             Text.text = currAvg switch
             {
                 var x when x >= 0 && x < cacheNum => CachedNumberStrings[x],
@@ -57,7 +63,14 @@ public class FPSCounter : MonoBehaviour
                 var x when x < 0 => "< 0",
                 _ => "?"
             };
-            
+
+            // Player Location
+            locationText.text = player.transform.position.ToString();
+        }
+        else
+        {
+            Text.text = ""; // Clear the text when F3 is not pressed
+            locationText.text = ""; // Clear the text when F3 is not pressed
         }
     }
 }
