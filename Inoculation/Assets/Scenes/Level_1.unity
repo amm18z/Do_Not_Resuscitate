@@ -1424,8 +1424,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4894a7e868d3ceb40a3d442ea2a57550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   health: 100
-  levelDifficulty: 500
+  baseLevelDifficulty: 70
+  waveDifficultyMultiplier: 2
   pathWaypoints:
   - {fileID: 388935749}
   - {fileID: 1392655364}
