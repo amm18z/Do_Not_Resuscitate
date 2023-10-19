@@ -5,9 +5,15 @@ using UnityEngine;
 public class LevelData : MonoBehaviour
 {
     [SerializeField]
+    private bool debugMode = false;
+
+    [SerializeField]
     private int health = 100;
     [SerializeField]
-    private int levelDifficulty = 100;
+    private int baseLevelDifficulty = 100;
+
+    [SerializeField]
+    private float waveDifficultyMultiplier = 1.5f;
 
     [SerializeField]
     private List<Transform> pathWaypoints;
@@ -21,7 +27,10 @@ public class LevelData : MonoBehaviour
     [SerializeField]
     private EnemyType levelEnemyType;
     private List<GameObject> activeEnemies;
-    
+
+    private int baseEnemySpawningDelay = 6;
+
+    private List<List<int>> waveEnemyCounts;
 
     // Start is called before the first frame update
     void Start()
@@ -29,20 +38,35 @@ public class LevelData : MonoBehaviour
         // Initializes the lists for storing each wave's strength and the spawned enemies
         waveStrengths = new List<int>();
         activeEnemies = new List<GameObject>();
+        waveEnemyCounts = new List<List<int>>();
 
         // Splits the total difficulty evenly into the number of waves
         // A more complex function will be employed in the future to ensure waves increase in difficulty
+        int tempWaveStrength = 0;
         for(int i = 0; i < waveCount; i++)
         {
-            waveStrengths.Add(levelDifficulty / waveCount);
+            tempWaveStrength = Mathf.CeilToInt(baseLevelDifficulty * waveStrengthMultiplier(i));
+
+
+            waveStrengths.Add(tempWaveStrength);
         }
+
+    }
+
+    private float waveStrengthMultiplier(int wave)
+    {
+        float finalMultiplier = 1;
+        for (int i = 0; i < wave; i++)
+            finalMultiplier *= waveDifficultyMultiplier;
+
+        return finalMultiplier;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Temporary action to trigger the start of the next wave
-        if (!waveIsActive && Input.GetKeyDown(KeyCode.Space))
+        if (debugMode && !waveIsActive && Input.GetKeyDown(KeyCode.Space))
         {
             nextWave();
         }
@@ -52,6 +76,12 @@ public class LevelData : MonoBehaviour
         {
             Debug.Log("Path step");
             pathStep();
+            stillAlive();
+        }
+        else if(stillAlive() && currentWave == waveCount)
+        {
+            // Have completed all waves in the level
+            // Trigger game won UI screen
         }
     }
 
@@ -107,8 +137,11 @@ public class LevelData : MonoBehaviour
 
     public void nextWave()
     {
-        if (currentWave == waveCount) return;
+        if (currentWave == waveCount || waveIsActive) return;
         waveIsActive = true;
+
+        // Hide the begin wave UI elements
+
         StartCoroutine("runWave");
     }
 
@@ -122,6 +155,7 @@ public class LevelData : MonoBehaviour
 
             // Instantiates a new enemy
             GameObject spawnedEnemy = GameObject.Instantiate(enemyPrefabs[0]); // Currently selects the first enemy in the set though this can be later improved to consider variable strength enemies
+            
             // Moves the enemy to the first waypoint along the path
             spawnedEnemy.transform.position = pathWaypoints[0].position;
             // Adds the enemy to the list of active enemies in the game
@@ -133,7 +167,7 @@ public class LevelData : MonoBehaviour
             waveStrengths[currentWave] -= enemyData.getStrength();
 
             // Waits for 1 second before continuing the loop
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(baseEnemySpawningDelay - currentWave);
         }
         
         // After all the enemies have been spawned, continue waiting until there are no longer any enemies on the screen
@@ -143,5 +177,15 @@ public class LevelData : MonoBehaviour
 
         currentWave += 1;
         waveIsActive = false;
+    }
+
+    private bool stillAlive()
+    {
+        if (health <= 0)
+        {
+            // End level and trigger the lost game UI screen
+            return false;
+        }
+        return true;
     }
 }
