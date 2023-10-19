@@ -13,7 +13,7 @@ public class LevelData : MonoBehaviour
     private int baseLevelDifficulty = 100;
 
     [SerializeField]
-    private float waveDifficultyMultiplier = 1.3f;
+    private float waveDifficultyMultiplier = 1.5f;
 
     [SerializeField]
     private List<Transform> pathWaypoints;
@@ -29,7 +29,8 @@ public class LevelData : MonoBehaviour
     private List<GameObject> activeEnemies;
 
     private int baseEnemySpawningDelay = 6;
-    
+
+    private List<List<int>> waveEnemyCounts;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class LevelData : MonoBehaviour
         // Initializes the lists for storing each wave's strength and the spawned enemies
         waveStrengths = new List<int>();
         activeEnemies = new List<GameObject>();
+        waveEnemyCounts = new List<List<int>>();
 
         // Splits the total difficulty evenly into the number of waves
         // A more complex function will be employed in the future to ensure waves increase in difficulty
@@ -44,8 +46,11 @@ public class LevelData : MonoBehaviour
         for(int i = 0; i < waveCount; i++)
         {
             tempWaveStrength = Mathf.CeilToInt(baseLevelDifficulty * waveStrengthMultiplier(i));
+
+
             waveStrengths.Add(tempWaveStrength);
         }
+
     }
 
     private float waveStrengthMultiplier(int wave)
@@ -150,6 +155,7 @@ public class LevelData : MonoBehaviour
 
             // Instantiates a new enemy
             GameObject spawnedEnemy = GameObject.Instantiate(enemyPrefabs[0]); // Currently selects the first enemy in the set though this can be later improved to consider variable strength enemies
+            
             // Moves the enemy to the first waypoint along the path
             spawnedEnemy.transform.position = pathWaypoints[0].position;
             // Adds the enemy to the list of active enemies in the game
