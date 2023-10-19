@@ -10,7 +10,10 @@ public class LevelData : MonoBehaviour
     [SerializeField]
     private int health = 100;
     [SerializeField]
-    private int levelDifficulty = 100;
+    private int baseLevelDifficulty = 100;
+
+    [SerializeField]
+    private float waveDifficultyMultiplier = 1.3f;
 
     [SerializeField]
     private List<Transform> pathWaypoints;
@@ -37,10 +40,21 @@ public class LevelData : MonoBehaviour
 
         // Splits the total difficulty evenly into the number of waves
         // A more complex function will be employed in the future to ensure waves increase in difficulty
+        int tempWaveStrength = 0;
         for(int i = 0; i < waveCount; i++)
         {
-            waveStrengths.Add(levelDifficulty / waveCount);
+            tempWaveStrength = Mathf.CeilToInt(baseLevelDifficulty * waveStrengthMultiplier(i));
+            waveStrengths.Add(tempWaveStrength);
         }
+    }
+
+    private float waveStrengthMultiplier(int wave)
+    {
+        float finalMultiplier = 1;
+        for (int i = 0; i < wave; i++)
+            finalMultiplier *= waveDifficultyMultiplier;
+
+        return finalMultiplier;
     }
 
     // Update is called once per frame
@@ -57,6 +71,12 @@ public class LevelData : MonoBehaviour
         {
             Debug.Log("Path step");
             pathStep();
+            stillAlive();
+        }
+        else if(currentWave == waveCount)
+        {
+            // Have completed all waves in the level
+            // Trigger game won UI screen
         }
     }
 
@@ -151,5 +171,13 @@ public class LevelData : MonoBehaviour
 
         currentWave += 1;
         waveIsActive = false;
+    }
+
+    private void stillAlive()
+    {
+        if (health <= 0)
+        {
+            // End level and trigger the lost game UI screen
+        }
     }
 }
