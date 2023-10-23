@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public interface TowerAction
+    public abstract class TowerAction : MonoBehaviour
     {
-        void performAction(Collider2D target);
+        abstract public void performAction(GameObject enemy);
     }
 
     [SerializeField]
@@ -33,18 +33,36 @@ public class Tower : MonoBehaviour
     void Update()
     {
         // Choose an enemy from in range list
-        // Perform action towards the chosen enemy
+        if(visibleEnemies.Count > 0)
+        {
+            // Picks the enemy at the front of the list
+            Enemy chosen_enemy = visibleEnemies[0];
+            // Performs the tower's action against the chosen enemy
+            towerAction.performAction(chosen_enemy.gameObject);
+        }
+
+        // Loop through all stored enemies to see if any are now dead
+        for (int i = 0; i < visibleEnemies.Count; i++)
+        {
+            Enemy currEnemy = visibleEnemies[i];
+            if (currEnemy.getHealth() <= 0)
+            {
+                visibleEnemies.RemoveAt(i);
+            }
+        }
     }
 
     public int getId() { return id; }
     public int getStrength() { return strength; }
     public int getCost() { return cost; }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Something entered trigger");
         // When an object enters the tower's range, see if it's an enemy
         if(collision.gameObject.tag == "enemy")
         {
+            Debug.Log("Enemy entered range");
             // If it's an enemy, add the enemy data to the list of in range enemies
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             visibleEnemies.Add(temp);
