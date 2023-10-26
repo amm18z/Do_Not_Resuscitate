@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileShoot : Tower.TowerAction
 {
     [SerializeField]
-    private Projectile projectile;
+    private GameObject projectile;
 
     [SerializeField]
     private Transform shootPosition;
@@ -23,7 +23,13 @@ public class ProjectileShoot : Tower.TowerAction
         StartCoroutine("delayShooting");
 
         // Shoot projectile towards the enemy
-        GameObject shotProjectile = GameObject.Instantiate(projectile.gameObject, shootPosition);
+        GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
+
+        Tower mainTower = this.GetComponent<Tower>();
+
+        int damage = mainTower.getStrength();
+        shotProjectile.GetComponent<Projectile>().setDamage(damage);
+
 
         Vector3 shootDirection = enemy.transform.position - shootPosition.position;
         shootDirection.Normalize();

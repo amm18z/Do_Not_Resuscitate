@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         age = 0;
-        damage = 0;
+        damage = 20;
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
         this.damage = damage;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Projectile hit something");
         if (collision.gameObject.tag == "enemy")
