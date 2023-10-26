@@ -74,7 +74,6 @@ public class LevelData : MonoBehaviour
         // If there is an active wave then the enemies should be moved along the path
         if (waveIsActive)
         {
-            Debug.Log("Path step");
             pathStep();
             stillAlive();
         }
