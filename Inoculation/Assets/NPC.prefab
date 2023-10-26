@@ -29,8 +29,13 @@ Transform:
   m_GameObject: {fileID: 6381790734020064183}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream:Inoculation/Assets/NPC.prefab
   m_LocalPosition: {x: -2.924, y: 0.588, z: 0}
   m_LocalScale: {x: 1.9419122, y: 1.9419122, z: 1.9419122}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+>>>>>>> Stashed changes:Inoculation/Assets/Towers/Tower Actions/Projectile/projectile.prefab
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +81,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< Updated upstream:Inoculation/Assets/NPC.prefab
   m_Sprite: {fileID: 21300000, guid: 9d9c62ef4f158c14ba0f522cb503895a, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 5568edffc4b3ae54c8989e349d549052, type: 3}
+>>>>>>> Stashed changes:Inoculation/Assets/Towers/Tower Actions/Projectile/projectile.prefab
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,18 +163,31 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< Updated upstream:Inoculation/Assets/NPC.prefab
   m_Offset: {x: 0, y: -0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
+=======
+  m_Offset: {x: -0.0058278143, y: -0.10875654}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 1, y: 2}
+>>>>>>> Stashed changes:Inoculation/Assets/Towers/Tower Actions/Projectile/projectile.prefab
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< Updated upstream:Inoculation/Assets/NPC.prefab
   m_Size: {x: 0.97, y: 1}
+=======
+  m_Size: {x: 0.8113336, y: 1.0770552}
+>>>>>>> Stashed changes:Inoculation/Assets/Towers/Tower Actions/Projectile/projectile.prefab
   m_EdgeRadius: 0
 --- !u!114 &3393408334547326516
 MonoBehaviour:
