@@ -4008,6 +4008,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4443006284839696655, guid: 97a041ab31e26944081292077b45eee1, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4624810822423018294, guid: 97a041ab31e26944081292077b45eee1, type: 3}
       propertyPath: strength
       value: 20
@@ -4018,11 +4022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4954331651182097670, guid: 97a041ab31e26944081292077b45eee1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.67
+      value: -3.95
       objectReference: {fileID: 0}
     - target: {fileID: 4954331651182097670, guid: 97a041ab31e26944081292077b45eee1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25960478
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 4954331651182097670, guid: 97a041ab31e26944081292077b45eee1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4057,6 +4061,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6458132004504439449, guid: 97a041ab31e26944081292077b45eee1, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458132004504439449, guid: 97a041ab31e26944081292077b45eee1, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -4064,6 +4072,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 3985466440694231804, guid: 8cf9050cd2d7e83469a0414f08d28ace, type: 3}
+    - target: {fileID: 8638543680753623175, guid: 97a041ab31e26944081292077b45eee1, type: 3}
+      propertyPath: projectileSpeed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

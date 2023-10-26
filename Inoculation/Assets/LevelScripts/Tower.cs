@@ -23,6 +23,8 @@ public class Tower : MonoBehaviour
 
     private List<Enemy> visibleEnemies;
 
+    private Enemy chosen_enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,7 @@ public class Tower : MonoBehaviour
         if(visibleEnemies.Count > 0)
         {
             // Picks the enemy at the front of the list
-            Enemy chosen_enemy = visibleEnemies[0];
+            chosen_enemy = visibleEnemies[0];
             // Performs the tower's action against the chosen enemy
             towerAction.performAction(chosen_enemy.gameObject);
         }
@@ -49,6 +51,17 @@ public class Tower : MonoBehaviour
             {
                 visibleEnemies.RemoveAt(i);
             }
+        }
+
+        // Rotate the tower towards chosen enemy
+        if (chosen_enemy != null)
+        {
+            Vector2 shootDirection = chosen_enemy.transform.position - this.transform.position;
+            shootDirection = shootDirection.normalized;
+            float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+            angle += 90;
+
+            this.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 

@@ -8,11 +8,14 @@ public class Projectile : MonoBehaviour
     
     private float age;
     private int damage;
+    Rigidbody2D rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
         age = 0;
         damage = 20;
+        rigidbody = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,7 +23,13 @@ public class Projectile : MonoBehaviour
     {
         age += Time.deltaTime;
 
-        if(age >= maxAge)
+        Vector2 moveDirection = rigidbody.velocity;
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        angle += 90;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        if (age >= maxAge)
         {
             GameObject.Destroy(this.gameObject);
         }
