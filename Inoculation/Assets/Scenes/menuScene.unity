@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3b8061b61ec27491ba29b26e9a6f1fe1, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 127749895}
   - component: {fileID: 127749899}
   - component: {fileID: 127749900}
+  - component: {fileID: 127749901}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -464,6 +465,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &127749901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127749894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba742f44fcd94dac83f8a2298685219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completeLevels: 
+  completeLevelsSize: 0
+  bal: 0
 --- !u!1 &171536501
 GameObject:
   m_ObjectHideFlags: 0
