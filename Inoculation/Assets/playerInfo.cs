@@ -8,7 +8,15 @@ public class playerInfo : MonoBehaviour
     public int[] completeLevels;
     public int completeLevelsSize;
     public int bal;
-    
 
+    public static playerInfo instance;
+
+    playerInfo()
+    {
+        if (instance != null)
+            GameObject.Destroy(this.gameObject);
+        else
+            instance = this;
+    }
 
 }
