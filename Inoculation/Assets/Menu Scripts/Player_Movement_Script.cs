@@ -1,63 +1,65 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
-
-// Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
-    
-    
-    
-    
-    public float moveSpeed = 2f; // speed serialized
-    public float collisionOffset = 0.05f; // how far the player can be + the collision box
-    private Vector2 movementInput; // movement input
-    public ContactFilter2D movementFilter; // movement filter
-    private Rigidbody2D rb; // player rigid body
-    
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();   
+    public float moveSpeed = 2.0f; // Regular move speed
+    public float sprintSpeedMultiplier = 2.0f; // Sprint speed multiplier
+    public float collisionOffset = 0.05f;
+    private Vector2 movementInput;
+    public ContactFilter2D movementFilter;
+    private Rigidbody2D rb;
+    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    private float originalMoveSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // get the rigid body
         rb = GetComponent<Rigidbody2D>();
+        originalMoveSpeed = moveSpeed;
     }
-    
-    private void FixedUpdate() {
+
+    private void FixedUpdate()
+    {
         if (movementInput != Vector2.zero)
         {
-            // get position, and movement filter 
+            float currentSpeed = moveSpeed;
+
+            // Check if the player is holding down the sprint key (Left Shift)
+            if (Keyboard.current.leftShiftKey.isPressed)
+            {
+                currentSpeed *= sprintSpeedMultiplier;
+            }
+
             int count = rb.Cast(
                 movementInput,
                 movementFilter,
                 castCollisions,
-                moveSpeed*Time.fixedDeltaTime + collisionOffset); 
-            
+                currentSpeed * Time.fixedDeltaTime + collisionOffset);
+
             if (count == 0)
             {
-                // change rigid bodys position
-                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
-
+                rb.MovePosition(rb.position + movementInput * currentSpeed * Time.fixedDeltaTime);
             }
         }
     }
 
     void OnMove(InputValue movementValue)
     {
-        // Set the movement input
         movementInput = movementValue.Get<Vector2>();
-       
     }
 
-   
-
-    
-
-   
+    void OnSprint(InputValue sprintValue)
+    {
+        // You can toggle the sprint by setting a boolean flag or handle sprint differently
+        // Here's a simple example:
+        if (sprintValue.isPressed)
+        {
+            moveSpeed = originalMoveSpeed * sprintSpeedMultiplier;
+        }
+        else
+        {
+            moveSpeed = originalMoveSpeed;
+        }
+    }
 }
