@@ -82,6 +82,16 @@ public class Tower : MonoBehaviour
         }
     }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "enemy")
+        {
+            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            int index = visibleEnemies.IndexOf(temp);
+            if (index != -1) visibleEnemies.RemoveAt(index);
+        }
+    }
+
     public static GameObject getTower(int id)
     {
         GameObject prefab = Resources.Load<GameObject>("tower_" + id.ToString());

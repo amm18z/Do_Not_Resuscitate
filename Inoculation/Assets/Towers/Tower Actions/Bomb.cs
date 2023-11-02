@@ -2,21 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Bomb : MonoBehaviour
 {
-    private float maxAge = 5f;
-    
+    [SerializeField]
+    private float maxAge = 3f;
     private float age;
+
     [SerializeField]
     private int damage = 5;
+    
     Rigidbody2D rigidbody;
+    CircleCollider2D collider;
+
+    [SerializeField]
+    GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
     {
         age = 0;
-        damage = 20;
         rigidbody = this.GetComponent<Rigidbody2D>();
+        collider = this.GetComponent<CircleCollider2D>();
+        collider.enabled = false;
+        explosion.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,27 +38,25 @@ public class Projectile : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        if (age >= maxAge)
+        if (age >= maxAge && !collider.enabled)
         {
+            // Enable bomb collider
+            collider.enabled = true;
+            explosion.SetActive(true);
+        }
+        else if (age >= maxAge + 0.5f)
+        {
+            // Allow half a second of enemies to get hit
             GameObject.Destroy(this.gameObject);
         }
-    }
-
-    public void setDamage(int damage)
-    {
-        this.damage = damage;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Projectile hit something");
-        if (collision.gameObject.tag == "enemy")
+        if(collision.gameObject.tag == "enemy")
         {
-            Debug.Log("Projectile hit enemy");
-            Enemy hitEnemy = collision.gameObject.GetComponent<Enemy>();
-            hitEnemy.damage(damage);
-            GameObject.Destroy(this.gameObject);
+            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            temp.damage(damage);
         }
-
     }
 }

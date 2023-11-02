@@ -53,14 +53,14 @@ public class PathSanitize : Tower.TowerAction
             // Spawn sanitizer on the path
             GameObject splash = GameObject.Instantiate(sanitizer, this.transform);
 
-            float angle = 90;//Random.Range(0, 360);
+            float angle = Random.Range(0, 360);
             Debug.Log(angle);
             float length = Random.Range(1, 3);
             
             Vector2 offset = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
             offset *= length;
 
-            Vector2 currPosition = splash.transform.position;
+            Vector2 currPosition = this.transform.position;
             Vector2 newPosition = offset + currPosition;
 
             splash.transform.position = newPosition;
