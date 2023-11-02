@@ -7180,6 +7180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 2
   doorPrompt: {fileID: 1985113433}
+  playerMovement: {fileID: 127749894}
 --- !u!61 &1985095406
 BoxCollider2D:
   m_ObjectHideFlags: 0
