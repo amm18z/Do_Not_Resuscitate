@@ -187,4 +187,9 @@ public class LevelData : MonoBehaviour
         }
         return true;
     }
+
+    public bool isWaveActive()
+    {
+        return waveIsActive;
+    }
 }
