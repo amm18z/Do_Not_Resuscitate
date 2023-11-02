@@ -13,6 +13,9 @@ public class ProjectileShoot : Tower.TowerAction
     [SerializeField]
     private float projectileSpeed = 4;
 
+    [SerializeField]
+    private float reloadDelay = 1;
+
     private bool reloading = false;
 
     public override void performAction(GameObject enemy)
@@ -27,10 +30,6 @@ public class ProjectileShoot : Tower.TowerAction
 
         Tower mainTower = this.GetComponent<Tower>();
 
-        int damage = mainTower.getStrength();
-        shotProjectile.GetComponent<Projectile>().setDamage(damage);
-
-
         Vector3 shootDirection = enemy.transform.position - shootPosition.position;
         shootDirection.Normalize();
         shootDirection *= projectileSpeed;
@@ -41,7 +40,7 @@ public class ProjectileShoot : Tower.TowerAction
     IEnumerator delayShooting()
     {
         reloading = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(reloadDelay);
         reloading = false;
     }
 
