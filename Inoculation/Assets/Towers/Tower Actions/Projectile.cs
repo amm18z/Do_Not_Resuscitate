@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private float age;
     [SerializeField]
     private int damage = 5;
-    Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
 
     // Start is called before the first frame update
     void Start()

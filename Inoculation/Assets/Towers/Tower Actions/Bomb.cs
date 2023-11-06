@@ -11,11 +11,11 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private int damage = 5;
     
-    Rigidbody2D rigidbody;
-    CircleCollider2D collider;
+    private Rigidbody2D rigidbody;
+    private CircleCollider2D collider;
 
     [SerializeField]
-    GameObject explosion;
+    private GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
