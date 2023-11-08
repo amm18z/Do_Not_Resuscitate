@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    //animation thing
+    public Animator animator;
     public abstract class TowerAction : MonoBehaviour
     {
         abstract public void performAction(GameObject enemy);
@@ -37,10 +39,15 @@ public class Tower : MonoBehaviour
         // Choose an enemy from in range list
         if(visibleEnemies.Count > 0)
         {
+            //animator.SetBool("isShoot", true);
             // Picks the enemy at the front of the list
             chosen_enemy = visibleEnemies[0];
             // Performs the tower's action against the chosen enemy
             towerAction.performAction(chosen_enemy.gameObject);
+        }
+        else
+        {
+            //animator.SetBool("isShoot", false);
         }
 
         // Loop through all stored enemies to see if any are now dead
