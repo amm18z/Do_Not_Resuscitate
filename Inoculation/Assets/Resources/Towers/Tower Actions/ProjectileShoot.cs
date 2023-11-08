@@ -18,10 +18,25 @@ public class ProjectileShoot : Tower.TowerAction
 
     private bool reloading = false;
 
+
+    public Animator animator;
+
+    private void Start()
+    {
+        animator.GetComponent<Animator>();
+        animator.SetBool("isShoot", false);
+    }
+
     public override void performAction(GameObject enemy)
     {
         if (reloading)
+        {
+            animator.SetBool("isShoot", false);
             return;
+        }
+
+
+        animator.SetBool("isShoot", true);
 
         StartCoroutine("delayShooting");
 
