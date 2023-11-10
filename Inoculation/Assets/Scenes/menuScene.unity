@@ -350,6 +350,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   animator: {fileID: 127749902}
+  isMovingVerticalFirst: 0
 --- !u!50 &127749897
 Rigidbody2D:
   serializedVersion: 4
@@ -4356,7 +4357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jimmy
+  m_text: James
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44773684076736d4989c68931b7ea63a, type: 2}
   m_sharedMaterial: {fileID: 4813126291486288674, guid: 44773684076736d4989c68931b7ea63a, type: 2}
