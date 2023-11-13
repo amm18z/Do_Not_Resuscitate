@@ -31,6 +31,7 @@ public class TowerPlacement : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                TowerIsAwake(true);
                 PlaceObject();
             }
         }
@@ -71,8 +72,43 @@ public class TowerPlacement : MonoBehaviour
 
     public void SelectObject(int index)
     {
-        
         selectedObject = Instantiate(objects[index], pos, Quaternion.identity);
+        TowerIsAwake(false);
     }
     
+
+    private void TowerIsAwake(bool state)
+    {
+        if(state == true) // Activate Tower
+        {
+            selectedObject.GetComponent<Tower>().enabled = true;
+
+            if (selectedObject.TryGetComponent<ProjectileShoot>(out ProjectileShoot script1))
+            {
+                script1.enabled = true;
+            }
+
+            if (selectedObject.TryGetComponent<PathSanitize>(out PathSanitize script2))
+            {
+                script2.enabled = true;
+            }
+        }
+
+        if(state == false) // Deactivate Tower
+        {
+            
+            selectedObject.GetComponent<Tower>().enabled = false;
+           
+            if (selectedObject.TryGetComponent<ProjectileShoot>(out ProjectileShoot script3))
+            {
+                script3.enabled = false;
+            }
+
+            if (selectedObject.TryGetComponent<PathSanitize>(out PathSanitize script4))
+            {
+                script4.enabled = false;
+            }
+        }
+        
+    }
 }

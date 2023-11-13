@@ -23,7 +23,8 @@ public class ProjectileShoot : Tower.TowerAction
 
     private void Start()
     {
-        animator.GetComponent<Animator>();
+        Tower temp = this.GetComponent<Tower>();
+        animator = temp.animator;
         animator.SetBool("isShoot", false);
     }
 
