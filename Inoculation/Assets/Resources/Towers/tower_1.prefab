@@ -135,7 +135,7 @@ MonoBehaviour:
   animator: {fileID: 7374592770148255434}
   id: 1
   strength: 5
-  cost: 0
+  cost: 100
   towerAction: {fileID: 8638543680753623175}
 --- !u!114 &8638543680753623175
 MonoBehaviour:

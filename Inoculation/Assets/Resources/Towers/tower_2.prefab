@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff393199d5b9b8243a99c6583e096998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   id: 2
   strength: 5
-  cost: 0
+  cost: 150
   towerAction: {fileID: 7389147968029585308}
 --- !u!114 &7389147968029585308
 MonoBehaviour:

@@ -131,9 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff393199d5b9b8243a99c6583e096998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   id: 3
   strength: 5
-  cost: 0
+  cost: 200
   towerAction: {fileID: 9120570053844183674}
 --- !u!114 &9120570053844183674
 MonoBehaviour:
@@ -151,6 +152,7 @@ MonoBehaviour:
   shootPosition: {fileID: 2574414665698204034}
   projectileSpeed: 3
   reloadDelay: 6
+  animator: {fileID: 0}
 --- !u!58 &5165960276171216572
 CircleCollider2D:
   m_ObjectHideFlags: 0
