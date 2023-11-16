@@ -153,7 +153,7 @@ MonoBehaviour:
   shootPosition: {fileID: 1206200759817691441}
   projectileSpeed: 4
   reloadDelay: 1
-  animator: {fileID: 0}
+  animator: {fileID: 7374592770148255434}
 --- !u!58 &6458132004504439449
 CircleCollider2D:
   m_ObjectHideFlags: 0
