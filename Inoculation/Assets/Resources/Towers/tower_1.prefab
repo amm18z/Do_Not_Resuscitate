@@ -135,7 +135,7 @@ MonoBehaviour:
   animator: {fileID: 7374592770148255434}
   id: 1
   strength: 5
-  cost: 0
+  cost: 100
   towerAction: {fileID: 8638543680753623175}
 --- !u!114 &8638543680753623175
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4798835426779528506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e914cdf3b1436f64b90b5c8ab88eac1f, type: 3}
   m_Name: 
@@ -153,6 +153,7 @@ MonoBehaviour:
   shootPosition: {fileID: 1206200759817691441}
   projectileSpeed: 4
   reloadDelay: 1
+  animator: {fileID: 7374592770148255434}
 --- !u!58 &6458132004504439449
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -14,6 +14,9 @@ public class PathSanitize : Tower.TowerAction
 
     private LevelData levelData;
 
+
+    public Animator animator;
+
     public override void performAction(GameObject enemy)
     {
         // Unnecessary since the tower will be constantly active throughout the wave
@@ -26,22 +29,27 @@ public class PathSanitize : Tower.TowerAction
         // Retrieve reference to the level data class for wave status checking
         GameObject levelDataObj = GameObject.Find("LevelData");
         levelData = levelDataObj.GetComponent<LevelData>();
+        animator.GetComponent<Animator>();
+        animator.SetBool("isShoot", false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isShoot", false);
         // If tower is currently not active and wave has been initiated, activate tower
         if (!active && levelData.isWaveActive())
         {
             active = true;
             StartCoroutine("sanitizePath");
+            animator.SetBool("isShoot", true);
         }
         // If tower is active, repeatedly check to see if the wave is still active
         else
         {
             // Once the wave is no longer active, tower will be automatically deactivated
             active = levelData.isWaveActive();
+            animator.SetBool("isShoot", active);
         }
     }
 

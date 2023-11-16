@@ -245,6 +245,53 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &41429782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 41429784}
+  - component: {fileID: 41429783}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &41429783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41429782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba742f44fcd94dac83f8a2298685219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completeLevels: 
+  completeLevelsSize: 0
+  bal: 0
+--- !u!4 &41429784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41429782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.85616, y: 605.2718, z: -1.6702652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &127749894
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +306,6 @@ GameObject:
   - component: {fileID: 127749895}
   - component: {fileID: 127749899}
   - component: {fileID: 127749900}
-  - component: {fileID: 127749901}
   - component: {fileID: 127749902}
   m_Layer: 0
   m_Name: Player
@@ -350,6 +396,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   animator: {fileID: 127749902}
+  isMovingVerticalFirst: 0
 --- !u!50 &127749897
 Rigidbody2D:
   serializedVersion: 4
@@ -467,21 +514,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &127749901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127749894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba742f44fcd94dac83f8a2298685219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  completeLevels: 
-  completeLevelsSize: 0
-  bal: 0
 --- !u!95 &127749902
 Animator:
   serializedVersion: 5
@@ -4356,7 +4388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jimmy
+  m_text: James
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44773684076736d4989c68931b7ea63a, type: 2}
   m_sharedMaterial: {fileID: 4813126291486288674, guid: 44773684076736d4989c68931b7ea63a, type: 2}
@@ -7996,3 +8028,4 @@ SceneRoots:
   - {fileID: 1985095407}
   - {fileID: 1394596001}
   - {fileID: 609231756}
+  - {fileID: 41429784}
