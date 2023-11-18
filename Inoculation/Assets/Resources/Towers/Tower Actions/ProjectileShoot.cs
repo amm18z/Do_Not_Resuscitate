@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,20 +25,43 @@ public class ProjectileShoot : Tower.TowerAction
     private void Start()
     {
         Tower temp = this.GetComponent<Tower>();
-        animator = temp.animator;
-        animator.SetBool("isShoot", false);
+        try
+        {
+            animator = temp.animator;
+            animator.SetBool("isShoot", false);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
+        
     }
 
     public override void performAction(GameObject enemy)
     {
         if (reloading)
         {
-            animator.SetBool("isShoot", false);
+            try
+            {
+                animator.SetBool("isShoot", false);
+            }catch(Exception e)
+            {
+                Debug.LogError(e.Message);
+            }
+            
             return;
         }
 
 
-        animator.SetBool("isShoot", true);
+        try
+        {
+            animator.SetBool("isShoot", true);
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
+        
 
         StartCoroutine("delayShooting");
 

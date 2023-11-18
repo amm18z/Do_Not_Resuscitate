@@ -19,9 +19,10 @@ public class Sanitizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Level Status: " + levelData.isWaveActive());
         // If the wave is no longer active, destroy all sanitizer splashes
         if (levelData.isWaveActive() == false)
-            GameObject.Destroy(this);
+            GameObject.Destroy(this.gameObject);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
