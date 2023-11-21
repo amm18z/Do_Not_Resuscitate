@@ -25,6 +25,13 @@ public class PlayerController : MonoBehaviour
         {
             float currentSpeed = moveSpeed;
 
+<<<<<<< Updated upstream
+=======
+            // Animation stuff goes here
+            animator.SetFloat("VerticalMovement", movementInput.y);
+            animator.SetFloat("HorizontalMovement", movementInput.x);
+
+>>>>>>> Stashed changes
             // Check if the player is holding down the sprint key (Left Shift)
             if (Keyboard.current.leftShiftKey.isPressed)
             {

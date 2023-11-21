@@ -13,6 +13,9 @@ public class CombinedScript : MonoBehaviour
     private int _averageCounter = 0;
     private int currAvg;
     private bool isF3Pressed = false;
+    
+    public GameObject Button;
+    public playerInfo playerData;
 
     private GameObject player;
     public TextMeshProUGUI locationText;
@@ -41,6 +44,7 @@ public class CombinedScript : MonoBehaviour
 
         if (isF3Pressed)
         {
+            Button.gameObject.SetActive(true);
             // FPS Counter
             // Sample
             var currFrame = (int)Math.Round(1f / Time.smoothDeltaTime);
@@ -69,6 +73,7 @@ public class CombinedScript : MonoBehaviour
         }
         else
         {
+            Button.gameObject.SetActive(false);
             Text.text = ""; // Clear the text when F3 is not pressed
             locationText.text = ""; // Clear the text when F3 is not pressed
         }
