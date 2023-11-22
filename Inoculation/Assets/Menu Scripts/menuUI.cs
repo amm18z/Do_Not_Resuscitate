@@ -5,8 +5,6 @@ using TMPro;
 
 public class menuUI : MonoBehaviour
 {
-    public playerInfo playerData;
-   
     public TextMeshProUGUI levelCurrencyText;
     public TextMeshProUGUI menuCurrencyText;
 
@@ -24,7 +22,7 @@ public class menuUI : MonoBehaviour
     void Update()
     {
         // text parameters should be updated here by calling PlayerData.GetMenuCurrency() when the PlayerData class is implemented
-        levelCurrencyText.text = "x" + playerData.GetLevelCurrency().ToString();
-        menuCurrencyText.text = "x" + playerData.GetMenuCurrency().ToString();
+        // levelCurrencyText.text = "x" + PlayerData.GetLevelCurrency().ToString();
+        // menuCurrencyText.text = "x" + PlayerData.GetMenuCurrency().ToString();
     }
 }
