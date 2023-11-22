@@ -1,4 +1,6 @@
+
 using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +8,7 @@ using UnityEngine;
 public class playerInfo : MonoBehaviour
 {
     // Start is called before the first frame update
+
     public int completeLevel;
     public int levelCurrency;
     public int menuCurrency;
@@ -24,6 +27,7 @@ public class playerInfo : MonoBehaviour
     private void Awake()
     {
         // Only have one instance at a time
+
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -32,6 +36,7 @@ public class playerInfo : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
 
     
     
@@ -61,16 +66,20 @@ public class playerInfo : MonoBehaviour
     }
     
     // get the level currency
+
     public int GetLevelCurrency()
     {
         return levelCurrency;
     }
 
+
     // set the level currency
+
     public void SetLevelCurrency(int money)
     {
         levelCurrency = money;
     }
+<<
     
     // set the menu currency
     public void SetMenuCurrency(int money)
@@ -79,10 +88,12 @@ public class playerInfo : MonoBehaviour
     }
 
     // add money
+
     public void ModifyLevelCurrency(int money)
     {
         levelCurrency = levelCurrency + money;
     }
+
     
     // add mony
     public void ModifyMenuCurrency(int money)
@@ -101,6 +112,7 @@ public class playerInfo : MonoBehaviour
         this.ModifyLevelCurrency(-100);
         this.ModifyMenuCurrency(-100);
     }
+
 
 
 }

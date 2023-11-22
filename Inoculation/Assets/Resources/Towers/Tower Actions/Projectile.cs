@@ -7,8 +7,9 @@ public class Projectile : MonoBehaviour
     private float maxAge = 5f;
     
     private float age;
-    private int damage;
-    Rigidbody2D rigidbody;
+    [SerializeField]
+    private int damage = 5;
+    private Rigidbody2D rigidbody;
 
     // Start is called before the first frame update
     void Start()

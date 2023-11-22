@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +14,54 @@ public class ProjectileShoot : Tower.TowerAction
     [SerializeField]
     private float projectileSpeed = 4;
 
+    [SerializeField]
+    private float reloadDelay = 1;
+
     private bool reloading = false;
+
+
+    public Animator animator;
+
+    private void Start()
+    {
+        Tower temp = this.GetComponent<Tower>();
+        try
+        {
+            animator = temp.animator;
+            animator.SetBool("isShoot", false);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
+        
+    }
 
     public override void performAction(GameObject enemy)
     {
         if (reloading)
+        {
+            try
+            {
+                animator.SetBool("isShoot", false);
+            }catch(Exception e)
+            {
+                Debug.LogError(e.Message);
+            }
+            
             return;
+        }
+
+
+        try
+        {
+            animator.SetBool("isShoot", true);
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
+        
 
         StartCoroutine("delayShooting");
 
@@ -26,10 +69,6 @@ public class ProjectileShoot : Tower.TowerAction
         GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
 
         Tower mainTower = this.GetComponent<Tower>();
-
-        int damage = mainTower.getStrength();
-        shotProjectile.GetComponent<Projectile>().setDamage(damage);
-
 
         Vector3 shootDirection = enemy.transform.position - shootPosition.position;
         shootDirection.Normalize();
@@ -41,7 +80,7 @@ public class ProjectileShoot : Tower.TowerAction
     IEnumerator delayShooting()
     {
         reloading = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(reloadDelay);
         reloading = false;
     }
 

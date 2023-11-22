@@ -98,6 +98,7 @@ public class LevelData : MonoBehaviour
             {
                 // If the enemy is out of health destroy the enemy
                 enemyData.destroyEnemy();
+                playerInfo.Instance.ModifyLevelCurrency(25);
 
                 // Remove the enemy from the list and step back an index to reorient the counter
                 activeEnemies.Remove(enemyData.gameObject);
@@ -186,5 +187,10 @@ public class LevelData : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public bool isWaveActive()
+    {
+        return waveIsActive;
     }
 }

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4624810822423018294}
   - component: {fileID: 8638543680753623175}
   - component: {fileID: 6458132004504439449}
+  - component: {fileID: 7374592770148255434}
   m_Layer: 0
   m_Name: tower_1
   m_TagString: Untagged
@@ -61,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1206200759817691441}
@@ -131,9 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff393199d5b9b8243a99c6583e096998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 7374592770148255434}
   id: 1
   strength: 5
-  cost: 0
+  cost: 100
   towerAction: {fileID: 8638543680753623175}
 --- !u!114 &8638543680753623175
 MonoBehaviour:
@@ -142,14 +144,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4798835426779528506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e914cdf3b1436f64b90b5c8ab88eac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
+  projectile: {fileID: 3985466440694231804, guid: 8cf9050cd2d7e83469a0414f08d28ace, type: 3}
   shootPosition: {fileID: 1206200759817691441}
   projectileSpeed: 4
+  reloadDelay: 1
+  animator: {fileID: 7374592770148255434}
 --- !u!58 &6458132004504439449
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,9 +183,30 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 4
+--- !u!95 &7374592770148255434
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798835426779528506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08f856dd08e243f438f4cea312e3281d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

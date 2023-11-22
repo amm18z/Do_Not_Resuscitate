@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private float originalMoveSpeed;
 
+    public Animator animator;
+    public Boolean isMovingVerticalFirst;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,13 +29,10 @@ public class PlayerController : MonoBehaviour
         {
             float currentSpeed = moveSpeed;
 
-<<<<<<< Updated upstream
-=======
-            // Animation stuff goes here
+            //Animation stuff goes here
             animator.SetFloat("VerticalMovement", movementInput.y);
             animator.SetFloat("HorizontalMovement", movementInput.x);
 
->>>>>>> Stashed changes
             // Check if the player is holding down the sprint key (Left Shift)
             if (Keyboard.current.leftShiftKey.isPressed)
             {
@@ -48,6 +49,38 @@ public class PlayerController : MonoBehaviour
             {
                 rb.MovePosition(rb.position + movementInput * currentSpeed * Time.fixedDeltaTime);
             }
+        }
+        else
+        {
+            animator.SetFloat("VerticalMovement", 0);
+            animator.SetFloat("HorizontalMovement", 0);
+        }
+
+        //Originally added to prevent flipping if player is moving vertically but leads to more issues
+        /*if(movementInput.x == 0)
+        {
+            if (movementInput.y != 0)
+            {
+                isMovingVerticalFirst = true;
+            }
+            else
+            {
+                isMovingVerticalFirst = false;
+            }
+        }*/
+
+        if(movementInput.x < 0 && transform.localScale.x > 0)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
+
+        if (movementInput.x > 0 && transform.localScale.x < 0)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
         }
     }
 

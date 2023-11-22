@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    //animation thing
+    public Animator animator;
     public abstract class TowerAction : MonoBehaviour
     {
         abstract public void performAction(GameObject enemy);
@@ -21,47 +23,29 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private TowerAction towerAction;
 
-    private List<Enemy> visibleEnemies;
-
     private Enemy chosen_enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        visibleEnemies = new List<Enemy>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Choose an enemy from in range list
-        if(visibleEnemies.Count > 0)
-        {
-            // Picks the enemy at the front of the list
-            chosen_enemy = visibleEnemies[0];
-            // Performs the tower's action against the chosen enemy
-            towerAction.performAction(chosen_enemy.gameObject);
-        }
-
-        // Loop through all stored enemies to see if any are now dead
-        for (int i = 0; i < visibleEnemies.Count; i++)
-        {
-            Enemy currEnemy = visibleEnemies[i];
-            if (currEnemy.getHealth() <= 0)
-            {
-                visibleEnemies.RemoveAt(i);
-            }
-        }
-
-        // Rotate the tower towards chosen enemy
+        // Rotate the tower towards chosen enemy and perform action
         if (chosen_enemy != null)
         {
+            
+
             Vector2 shootDirection = chosen_enemy.transform.position - this.transform.position;
             shootDirection = shootDirection.normalized;
             float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
             angle += 90;
 
             this.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            towerAction.performAction(chosen_enemy.gameObject);
         }
     }
 
@@ -73,12 +57,22 @@ public class Tower : MonoBehaviour
     {
         Debug.Log("Something entered trigger");
         // When an object enters the tower's range, see if it's an enemy
-        if(collision.gameObject.tag == "enemy")
+        if(collision.gameObject.tag == "enemy" && chosen_enemy == null)
         {
             Debug.Log("Enemy entered range");
             // If it's an enemy, add the enemy data to the list of in range enemies
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
-            visibleEnemies.Add(temp);
+            chosen_enemy = temp;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "enemy")
+        {
+            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            if (chosen_enemy == temp)
+                chosen_enemy = null;
         }
     }
 
