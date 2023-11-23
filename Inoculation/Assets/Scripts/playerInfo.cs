@@ -13,15 +13,13 @@ public class playerInfo : MonoBehaviour
     
     
     
+    
 
     public static playerInfo Instance;
 
     public void Start()
     {
-        // default load values
-        completeLevels = 0;
-        menuCurrency = 0;
-        levelCurrency = 0;
+        
     }
 
     private void Awake()
@@ -40,6 +38,8 @@ public class playerInfo : MonoBehaviour
     {
         return levelCurrency;
     }
+
+   
     
     public int GetMenuCurrency()
     {
