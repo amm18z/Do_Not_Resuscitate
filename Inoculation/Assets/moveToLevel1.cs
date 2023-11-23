@@ -1,15 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class moveToShop : MonoBehaviour
+public class moveToLevel1 : MonoBehaviour
 {
+    // Start is called before the first frame update
     public int sceneIndex;
     public GameObject scenePrompt;
     public PlayerController playerLogic;
-    public saveGame game;
 
     void Start()
     {
@@ -20,16 +19,14 @@ public class moveToShop : MonoBehaviour
         print("Trigger Entered"); // For Debug
         if (other.tag == "Player") // Identify if the obj passed is a player
         {
-           scenePrompt.SetActive(true);
+            scenePrompt.SetActive(true);
             playerLogic.moveSpeed = 0.0f;
         }
-        
     }
     public void YesChoice()
     {
-        game.SaveGame();
         print("Switching Scenes");
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the shop scene
+        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the level scene
     }
     public void NoChoice()
     {

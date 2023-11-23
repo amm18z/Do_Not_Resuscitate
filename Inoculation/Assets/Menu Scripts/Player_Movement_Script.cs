@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private float originalMoveSpeed;
+    public saveGame game;
 
     public Animator animator;
     public Boolean isMovingVerticalFirst;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         originalMoveSpeed = moveSpeed;
+        game.LoadGame(); // last save on start
     }
 
     private void FixedUpdate()
