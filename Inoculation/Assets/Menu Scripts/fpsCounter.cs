@@ -15,7 +15,9 @@ public class CombinedScript : MonoBehaviour
     private bool isF3Pressed = false;
 
     private GameObject player;
-    public TextMeshProUGUI locationText;
+    public GameObject add;
+    public GameObject sub;
+    
 
     private KeyCode toggleKey = KeyCode.F3; // Key to toggle the Text
 
@@ -27,7 +29,7 @@ public class CombinedScript : MonoBehaviour
         }
         frameRates = new int[_averageFromAmount];
 
-        player = GameObject.Find("playerObject");
+        player = GameObject.Find("playerObject"); // get player obj
     }
 
     void Update()
@@ -36,7 +38,7 @@ public class CombinedScript : MonoBehaviour
         {
             isF3Pressed = !isF3Pressed;
             Text.enabled = isF3Pressed; // Enable or disable the Text component
-            locationText.enabled = isF3Pressed; // Enable or disable the locationText component
+            //locationText.enabled = isF3Pressed; // Enable or disable the locationText component
         }
 
         if (isF3Pressed)
@@ -65,12 +67,18 @@ public class CombinedScript : MonoBehaviour
             };
 
             // Player Location
-            locationText.text = player.transform.position.ToString();
+            //locationText.text = player.transform.position.ToString();
+            // Turn on Add and Remove button
+            add.gameObject.SetActive(true);
+            sub.gameObject.SetActive(true);
         }
         else
-        {
+        {   
+            // Turn Off Add And Remove 
+            add.gameObject.SetActive(false);
+            sub.gameObject.SetActive(false);
             Text.text = ""; // Clear the text when F3 is not pressed
-            locationText.text = ""; // Clear the text when F3 is not pressed
+            //locationText.text = ""; // Clear the text when F3 is not pressed
         }
     }
 }

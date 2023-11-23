@@ -9,6 +9,7 @@ public class moveToShop : MonoBehaviour
     public int sceneIndex;
     public GameObject scenePrompt;
     public PlayerController playerLogic;
+    public saveGame game;
 
     void Start()
     {
@@ -22,9 +23,11 @@ public class moveToShop : MonoBehaviour
            scenePrompt.SetActive(true);
             playerLogic.moveSpeed = 0.0f;
         }
+        
     }
     public void YesChoice()
     {
+        game.SaveGame();
         print("Switching Scenes");
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the shop scene
     }
