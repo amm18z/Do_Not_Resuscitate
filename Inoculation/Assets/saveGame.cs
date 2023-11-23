@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class saveGame : MonoBehaviour
     public playerInfo playerData;
 
     public GameObject player;
+
+    public void Start()
+    {
+        LoadGame();
+    }
+
     // Start is called before the first frame update
     public void SaveGame()
     {
