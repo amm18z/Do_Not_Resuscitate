@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff393199d5b9b8243a99c6583e096998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 8599109887159554901}
   id: 3
   strength: 5
   cost: 200
@@ -153,7 +153,7 @@ MonoBehaviour:
   shootPosition: {fileID: 2574414665698204034}
   projectileSpeed: 3
   reloadDelay: 6
-  animator: {fileID: 0}
+  animator: {fileID: 8599109887159554901}
 --- !u!58 &5165960276171216572
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ Animator:
   m_GameObject: {fileID: 8466494469909803115}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c3256386630dc2448def6e43eae5fc9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1623577d4bb94e74bade3284c1395225, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

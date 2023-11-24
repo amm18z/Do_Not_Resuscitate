@@ -4259,11 +4259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba742f44fcd94dac83f8a2298685219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completeLevels: 
-  completeLevelsSize: 0
-  bal: 0
-  levelCurrency: 0
+  completeLevels: 0
   menuCurrency: 0
+  levelCurrency: 0
 --- !u!4 &1294655590
 Transform:
   m_ObjectHideFlags: 0
