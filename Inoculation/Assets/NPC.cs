@@ -11,6 +11,7 @@ public class NPC : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index = 0;
+    public FirstTimePlayer FirstPlayer;
 
     public float wordSpeed;
     public bool playerInRange;
@@ -24,7 +25,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange) 
+        if(Input.GetKeyDown(KeyCode.Space) && playerInRange && !FirstPlayer.isOn()) 
         {
             if (!dialoguePanel.activeInHierarchy) 
             {

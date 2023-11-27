@@ -12,6 +12,8 @@ public class WriteIntroSceneDialog : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TypeDialog());
+        
+        
     }
 
     public void run()
@@ -19,6 +21,8 @@ public class WriteIntroSceneDialog : MonoBehaviour
         StartCoroutine(TypeDialog());
     }
 
+    
+    
     IEnumerator TypeDialog()
     {
         foreach (string sentence in dialogArray)
