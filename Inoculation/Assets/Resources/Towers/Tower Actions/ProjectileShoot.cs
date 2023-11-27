@@ -97,6 +97,11 @@ public class ProjectileShoot : Tower.TowerAction
         shootDirection.Normalize();
         shootDirection *= projectileSpeed;
 
+        Vector3 initialPosition = shotProjectile.transform.position;
+
+        shotProjectile.transform.parent = null;
+
+        shotProjectile.transform.position = initialPosition;
         shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
 
         StartCoroutine("reload");

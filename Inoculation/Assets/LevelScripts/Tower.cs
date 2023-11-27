@@ -28,15 +28,28 @@ public class Tower : MonoBehaviour
 
     private Enemy chosen_enemy;
 
+    private List<Enemy> enemyQueue;
+
     // Start is called before the first frame update
     void Start()
     {
+        enemyQueue = new List<Enemy>();
         towerAction.SetAnimationDelay(shootingDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Scan all queued enemies to see if any have already been destroyed
+        for(int i = 0; i < enemyQueue.Count; i++)
+        {
+            if(enemyQueue[i] == null)
+            {
+                enemyQueue.RemoveAt(i);
+                i--;
+            }
+        }
+
         towerAction.SetAnimationDelay(shootingDelay);
         // Rotate the tower towards chosen enemy and perform action
         if (chosen_enemy != null)
@@ -68,6 +81,10 @@ public class Tower : MonoBehaviour
             // If it's an enemy, add the enemy data to the list of in range enemies
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             chosen_enemy = temp;
+        }else if(collision.gameObject.tag == "enemy")
+        {
+            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            enemyQueue.Add(temp);
         }
     }
 
@@ -77,7 +94,17 @@ public class Tower : MonoBehaviour
         {
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             if (chosen_enemy == temp)
+            {
                 chosen_enemy = null;
+                if(enemyQueue.Count > 0)
+                {
+                    chosen_enemy = enemyQueue[0];
+                }
+            }
+            else if(enemyQueue.IndexOf(temp) != -1)
+            {
+                enemyQueue.Remove(temp);
+            }
         }
     }
 
