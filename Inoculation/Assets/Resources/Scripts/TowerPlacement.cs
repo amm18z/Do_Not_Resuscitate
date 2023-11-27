@@ -62,7 +62,14 @@ public class TowerPlacement : MonoBehaviour
         TowerIsAwake(false);
     }
     
-
+    // ------------------------------ How To Get Towers ------------------------------ //  
+    // To Check if Tower is purchased Check The player prefs.
+    // Just Get the tower key from the shop info. Its stored as an int (1- true, 0- false)
+    // To Check: PlayerPrefs.GetInt("CrossBow"); Should be subbed for appropriate key 
+    // If You want to modify these look at the tower info script
+    // Ask Aiden (me) if you need any help with this process lol
+    // ------------------------------------------------------------------------------- // 
+    
     private void TowerIsAwake(bool state)
     {
         selectedObject.GetComponent<Tower>().enabled = state;
