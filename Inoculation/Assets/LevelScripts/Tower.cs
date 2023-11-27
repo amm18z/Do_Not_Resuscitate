@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     public abstract class TowerAction : MonoBehaviour
     {
         abstract public void performAction(GameObject enemy);
+        abstract public void SetAnimationDelay(float delay);
     }
 
     [SerializeField]
@@ -23,16 +24,20 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private TowerAction towerAction;
 
+    public float shootingDelay = 0.0f;
+
     private Enemy chosen_enemy;
 
     // Start is called before the first frame update
     void Start()
     {
+        towerAction.SetAnimationDelay(shootingDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
+        towerAction.SetAnimationDelay(shootingDelay);
         // Rotate the tower towards chosen enemy and perform action
         if (chosen_enemy != null)
         {

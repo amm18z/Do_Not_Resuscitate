@@ -14,6 +14,7 @@ public class PathSanitize : Tower.TowerAction
 
     private LevelData levelData;
 
+    private float animationDelay = 0.0f;
 
     public Animator animator;
 
@@ -21,6 +22,11 @@ public class PathSanitize : Tower.TowerAction
     {
         // Unnecessary since the tower will be constantly active throughout the wave
         return;
+    }
+
+    public override void SetAnimationDelay(float delay)
+    {
+        animationDelay = delay;
     }
 
     // Start is called before the first frame update

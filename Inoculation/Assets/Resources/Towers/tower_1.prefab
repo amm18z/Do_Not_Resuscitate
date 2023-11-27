@@ -137,6 +137,7 @@ MonoBehaviour:
   strength: 5
   cost: 100
   towerAction: {fileID: 8638543680753623175}
+  shootingDelay: 0
 --- !u!114 &8638543680753623175
 MonoBehaviour:
   m_ObjectHideFlags: 0
