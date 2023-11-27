@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter Game
+  m_text: Click Anywhere To Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -202,13 +202,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 2192
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -338,7 +338,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.748932, g: 0.8490566, b: 0.83886945, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.30563256, b: 0.31132078, a: 1}
+  m_Color: {r: 0, g: 0.18039216, b: 0.68235296, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.30563256, b: 0.31132078, a: 1}
+  m_Color: {r: 0, g: 0.17732427, b: 0.6792453, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -748,6 +748,7 @@ RectTransform:
   - {fileID: 1105993236}
   - {fileID: 634108019}
   - {fileID: 2015446078}
+  - {fileID: 1489378622}
   m_Father: {fileID: 1557765096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -844,18 +845,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489378621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 39410457}
-  m_Father: {fileID: 1557765096}
+  m_Father: {fileID: 1464416983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 699, y: 200}
+  m_SizeDelta: {x: 10000, y: 10000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489378623
 MonoBehaviour:
@@ -878,11 +879,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.4285333, g: 0.667039, b: 0.8490566, a: 1}
-    m_HighlightedColor: {r: 0.3820755, g: 0.67406857, b: 1, a: 1}
-    m_PressedColor: {r: 0.1745283, g: 0.8098695, b: 1, a: 1}
-    m_SelectedColor: {r: 0, g: 0.43917054, b: 0.6415094, a: 1}
-    m_DisabledColor: {r: 0.15566039, g: 0.5385195, b: 1, a: 0.5019608}
+    m_NormalColor: {r: 0.4285333, g: 0.667039, b: 0.8490566, a: 0}
+    m_HighlightedColor: {r: 0.3820755, g: 0.67406857, b: 1, a: 0}
+    m_PressedColor: {r: 0.1745283, g: 0.8098695, b: 1, a: 0}
+    m_SelectedColor: {r: 0, g: 0.43917054, b: 0.6415094, a: 0}
+    m_DisabledColor: {r: 0.15566039, g: 0.5385195, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1046,9 +1047,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1095581399}
-  - {fileID: 1489378622}
   - {fileID: 1464416983}
+  - {fileID: 1095581399}
   - {fileID: 1596534016}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1072,8 +1072,11 @@ MonoBehaviour:
   dialogText: {fileID: 2109921474}
   dialogArray:
   - Hello! I am Jimmy
-  - Welcome To The Game!
-  - To Get Started Press 'Enter Game'
+  - Welcome To Inoculation!
+  - There has been an outbreak of deadly virus's within our hospital
+  - 'You need to save us all. We have provided you with a basic tower. '
+  - Use this tower to fight enemies.
+  - Now go save our hospital!
   typingSpeed: 0.1
 --- !u!1 &1596534015
 GameObject:
@@ -1334,7 +1337,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1347,7 +1350,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -1417,14 +1420,14 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2000, y: 500}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 2000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1557765096}
   - {fileID: 519420032}
   - {fileID: 1443192184}
-  - {fileID: 1557765096}
   - {fileID: 107329824}
