@@ -27,6 +27,7 @@ public class saveGame : MonoBehaviour
         PlayerPrefs.SetInt("menuCurr", playerData.GetMenuCurrency());
         PlayerPrefs.SetInt("levelCurr", playerData.GetLevelCurrency());
         PlayerPrefs.SetInt("completedLevels", playerData.GetCompletedLevels());
+        PlayerPrefs.SetInt("hasPlayed", 1); // the player has played game
     }
 
     public void LoadGame()
