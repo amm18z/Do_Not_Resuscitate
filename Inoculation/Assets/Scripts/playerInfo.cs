@@ -10,8 +10,8 @@ public class playerInfo : MonoBehaviour
     public int completeLevels;
     public int menuCurrency;
     public int levelCurrency;
-    
-    
+
+    public purchaseItem UpdateObject;
     
     
 
@@ -69,7 +69,6 @@ public class playerInfo : MonoBehaviour
     {
         // reset completed levels
         completeLevels = levels;
-        
     }
 
     public void AddMoney()
@@ -77,13 +76,14 @@ public class playerInfo : MonoBehaviour
         // add button for debug
         menuCurrency = menuCurrency + 100;
         levelCurrency = levelCurrency + 100;
+        UpdateObject.UpdateMenuCurrency(); // update money
     }
     public void SubMoney()
     {
         // sub button for debug
         menuCurrency = menuCurrency - 100;
         levelCurrency = levelCurrency - 100;
-        
+        UpdateObject.UpdateMenuCurrency(); // update money
     }
 
     public void IncrementCompletedLevels()
