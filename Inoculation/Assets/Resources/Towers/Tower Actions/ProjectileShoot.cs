@@ -18,7 +18,9 @@ public class ProjectileShoot : Tower.TowerAction
     private float reloadDelay = 1;
 
     private bool reloading = false;
+    private bool waitingForShot = false;
 
+    private float animationDelay = 0.0f;
 
     public Animator animator;
 
@@ -37,9 +39,14 @@ public class ProjectileShoot : Tower.TowerAction
         
     }
 
+    public override void SetAnimationDelay(float delay)
+    {
+        animationDelay = delay;
+    }
+
     public override void performAction(GameObject enemy)
     {
-        if (reloading)
+        if (reloading || waitingForShot)
         {
             try
             {
@@ -62,9 +69,25 @@ public class ProjectileShoot : Tower.TowerAction
             Debug.LogError(e.Message);
         }
         
+        if (!waitingForShot && !reloading)
+            StartCoroutine(delayShooting(enemy));
+        
+    }
 
-        StartCoroutine("delayShooting");
+    IEnumerator reload()
+    {
+        reloading = true;
+        waitingForShot = false;
+        yield return new WaitForSeconds(reloadDelay);
+        reloading = false;
+    }
 
+    IEnumerator delayShooting(GameObject enemy)
+    {
+        waitingForShot = true;
+        Debug.Log("Delaying action for animation");
+        yield return new WaitForSeconds(animationDelay);
+        
         // Shoot projectile towards the enemy
         GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
 
@@ -75,13 +98,8 @@ public class ProjectileShoot : Tower.TowerAction
         shootDirection *= projectileSpeed;
 
         shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
-    }
 
-    IEnumerator delayShooting()
-    {
-        reloading = true;
-        yield return new WaitForSeconds(reloadDelay);
-        reloading = false;
+        StartCoroutine("reload");
     }
 
 }
