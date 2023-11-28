@@ -413,6 +413,7 @@ MonoBehaviour:
   sceneIndex: 3
   scenePrompt: {fileID: 1267436892}
   playerLogic: {fileID: 0}
+  SaveGame: {fileID: 319527972}
 --- !u!1 &114471003
 GameObject:
   m_ObjectHideFlags: 0
@@ -6154,7 +6155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstTimeGameObject: {fileID: 138614897}
   CanvasFirstTime: {fileID: 1467349221}
-  DebugMode: 0
+  DebugMode: 1
 --- !u!1 &1496087801
 GameObject:
   m_ObjectHideFlags: 0
@@ -11269,6 +11270,7 @@ MonoBehaviour:
   menuCurrency: 0
   levelCurrency: 0
   HasPlayedIntro: 0
+  HasPlayedLevelIntro: 0
   UpdateObject: {fileID: 0}
 --- !u!1 &2082014496
 GameObject:

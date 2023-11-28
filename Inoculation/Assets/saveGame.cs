@@ -43,6 +43,7 @@ public class saveGame : MonoBehaviour
         playerData.SetLevelCurrency(PlayerPrefs.GetInt("levelCurr"));
         // set levels completed
         playerData.SetCompletedLevels(PlayerPrefs.GetInt("completedLevels"));
+        playerData.SetHasLevel(PlayerPrefs.GetInt("levelIntro"));
     }
 
     public void AddMoney()

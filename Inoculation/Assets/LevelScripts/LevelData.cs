@@ -32,6 +32,10 @@ public class LevelData : MonoBehaviour
 
     private List<List<int>> waveEnemyCounts;
 
+    [SerializeField]
+    private int speedMultiplier; // enemy speed multiplier
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +43,7 @@ public class LevelData : MonoBehaviour
         waveStrengths = new List<int>();
         activeEnemies = new List<GameObject>();
         waveEnemyCounts = new List<List<int>>();
-
+        speedMultiplier = 1; // default speed
         // Splits the total difficulty evenly into the number of waves
         // A more complex function will be employed in the future to ensure waves increase in difficulty
         int tempWaveStrength = 0;
@@ -113,7 +117,7 @@ public class LevelData : MonoBehaviour
             Vector2 nextPosition = pathWaypoints[nextWaypointIndex].position;
             // Calculates the next position which the enemy should be in
             // Moves the enemy's position toward the next point with a maximum step value derived from their speed
-            Vector2 newEnemyPosition = Vector2.MoveTowards(enemyData.gameObject.transform.position, nextPosition, enemyData.getSpeed() * Time.deltaTime);
+            Vector2 newEnemyPosition = Vector2.MoveTowards(enemyData.gameObject.transform.position, nextPosition, enemyData.getSpeed() * Time.deltaTime * speedMultiplier);
 
             // Moves the enemy to the newly calcualted position
             enemyData.move(newEnemyPosition);
@@ -187,6 +191,16 @@ public class LevelData : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void IncreaseSpeed()
+    {
+        speedMultiplier = 2;
+    }
+
+    public void DecreaseSpeed()
+    {
+        speedMultiplier = 1;
     }
 
     public bool isWaveActive()

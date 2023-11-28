@@ -32,6 +32,6 @@ public class gameSaveShop : MonoBehaviour
         // dont need to create an array of towers etc because its within the tower obj
         playerData.SetMenuCurrency(PlayerPrefs.GetInt("menuCurr"));
         playerData.SetLevelCurrency(PlayerPrefs.GetInt("levelCurr"));
-        playerData.SetHasShop(PlayerPrefs.GetInt("shopIntro")); // See if player has gone to shop
+        playerData.SetHas(PlayerPrefs.GetInt("Intro")); // See if player has gone to 
     }
 }

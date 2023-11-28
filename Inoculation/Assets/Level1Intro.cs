@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IntroController : MonoBehaviour
+public class Level1Intro : MonoBehaviour
 {
     public GameObject firstScreen;
     public GameObject secondScreen;
@@ -11,8 +11,8 @@ public class IntroController : MonoBehaviour
 
     private void Start()
     {
-        hasPlayed = playerData.HasIntroPlayed();
-        if (hasPlayed && (!debugMode)) // debug mode overrides
+        hasPlayed = playerData.HasLevelIntroPlayed();
+        if (hasPlayed || (!debugMode)) // debug mode overrides
         {
             SetAllInactive(); // turn off all screens (1 is on by default)
         }
@@ -40,7 +40,7 @@ public class IntroController : MonoBehaviour
     public void TurnOffThirdScreen()
     {
         thirdScreen.SetActive(false);
-        PlayerPrefs.SetInt("Intro", 1); //  intro has played fully
+        PlayerPrefs.SetInt("levelIntro", 1); //  intro has played fully
     }
 
     private void SetAllInactive()

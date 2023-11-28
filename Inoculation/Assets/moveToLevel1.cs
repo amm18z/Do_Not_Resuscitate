@@ -9,7 +9,7 @@ public class moveToLevel1 : MonoBehaviour
     public int sceneIndex;
     public GameObject scenePrompt;
     public PlayerController playerLogic;
-
+    public saveGame SaveGame;
     void Start()
     {
         playerLogic = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -26,6 +26,7 @@ public class moveToLevel1 : MonoBehaviour
     public void YesChoice()
     {
         print("Switching Scenes");
+        SaveGame.SaveGame(); // Saves Game on entry
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the level scene
     }
     public void NoChoice()
