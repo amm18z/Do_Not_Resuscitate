@@ -102,4 +102,27 @@ public class ProjectileShoot : Tower.TowerAction
         StartCoroutine("reload");
     }
 
+    public void increaseSpeedCrossBow()
+    {
+        projectileSpeed = 24;
+        reloadDelay = 0.25f;
+    }
+    public void decreaseSpeedCrossBow()
+    {
+        projectileSpeed = 12;
+        reloadDelay = 0.5f;
+    }
+
+    public void increaseSpeedSoda()
+    {
+        projectileSpeed = 24;
+        reloadDelay = 0.25f;
+    }
+    public void decreaseSpeedSoda()
+    {
+        projectileSpeed = 12;
+        reloadDelay = 0.5f;
+    }
+    
+
 }

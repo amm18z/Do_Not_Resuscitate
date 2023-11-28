@@ -161,6 +161,7 @@ MonoBehaviour:
   menuCurrency: 0
   levelCurrency: 0
   HasPlayedIntro: 0
+  HasPlayedLevelIntro: 0
   UpdateObject: {fileID: 764071182}
 --- !u!4 &17868987
 Transform:
@@ -6914,6 +6915,7 @@ MonoBehaviour:
   secondScreen: {fileID: 310646738}
   thirdScreen: {fileID: 160052074}
   playerData: {fileID: 17868986}
+  debugMode: 1
 --- !u!1 &1926473047
 GameObject:
   m_ObjectHideFlags: 0

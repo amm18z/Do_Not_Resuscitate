@@ -11,8 +11,9 @@ public class playerInfo : MonoBehaviour
     public int menuCurrency;
     public int levelCurrency;
     public bool HasPlayedIntro;
-    public purchaseItem UpdateObject;
-    
+    public bool HasPlayedLevelIntro;
+    public purchaseItem UpdateObject; // not applicable to menu and levels
+  
     
 
     public static playerInfo Instance;
@@ -34,10 +35,10 @@ public class playerInfo : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetHasShop(int HasShopIntro)
+    public void SetHas(int HasIntro)
     {
         // set bool based on if played
-        if (HasShopIntro == 1)
+        if (HasIntro == 1)
         {
             HasPlayedIntro = true;
         }
@@ -46,8 +47,24 @@ public class playerInfo : MonoBehaviour
             HasPlayedIntro = false;
         }
     }
+    public void SetHasLevel(int HasIntroLevel)
+    {
+        // set bool based on if played
+        if (HasIntroLevel == 1)
+        {
+            HasPlayedLevelIntro = true;
+        }
+        else
+        {
+            HasPlayedLevelIntro = false;
+        }
+    }
 
-    public bool HasShopIntroPlayed() // if the intro has played before
+    public bool HasIntroPlayed() // if the intro has played before
+    {
+        return HasPlayedIntro;
+    }
+    public bool HasLevelIntroPlayed() // if the intro has played before
     {
         return HasPlayedIntro;
     }
@@ -108,7 +125,6 @@ public class playerInfo : MonoBehaviour
     {
         // complete another level
         completeLevels++;
-        
     }
     
 
