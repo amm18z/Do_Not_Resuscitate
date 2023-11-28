@@ -11268,6 +11268,7 @@ MonoBehaviour:
   completeLevels: 0
   menuCurrency: 0
   levelCurrency: 0
+  HasPlayedIntro: 0
   UpdateObject: {fileID: 0}
 --- !u!1 &2082014496
 GameObject:
