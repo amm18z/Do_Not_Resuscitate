@@ -84,7 +84,8 @@ public class Tower : MonoBehaviour
         else if(collision.gameObject.tag == "enemy")
         {
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
-            enemy_queue.Add(temp);
+            if (temp != null)
+                enemy_queue.Add(temp);
         }
     }
 
