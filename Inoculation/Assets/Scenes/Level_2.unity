@@ -1570,6 +1570,7 @@ MonoBehaviour:
   waveCount: 5
   levelEnemyType: {fileID: 11400000, guid: 14f272f380cdcc0489a5289eddac7def, type: 2}
   speedMultiplier: 0
+  waveCounter: {fileID: 125671645}
 --- !u!4 &776596575
 Transform:
   m_ObjectHideFlags: 0
