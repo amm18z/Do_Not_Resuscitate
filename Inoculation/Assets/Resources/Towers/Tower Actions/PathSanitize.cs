@@ -83,4 +83,13 @@ public class PathSanitize : Tower.TowerAction
         }
         
     }
+    public void increaseSpeed()
+    {
+        sanitizeDelay = 1;
+    }
+
+    public void decreaseSpeed()
+    {
+        sanitizeDelay = 2;
+    }
 }

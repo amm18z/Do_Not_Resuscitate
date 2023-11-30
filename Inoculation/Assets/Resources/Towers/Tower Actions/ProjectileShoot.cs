@@ -93,13 +93,40 @@ public class ProjectileShoot : Tower.TowerAction
 
         Tower mainTower = this.GetComponent<Tower>();
 
+        Vector3 initialPosition = shotProjectile.transform.position;
         Vector3 shootDirection = enemy.transform.position - shootPosition.position;
         shootDirection.Normalize();
         shootDirection *= projectileSpeed;
 
+        shotProjectile.transform.parent = null;
+
+        shotProjectile.transform.position = initialPosition;
         shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
 
         StartCoroutine("reload");
     }
+
+    public void increaseSpeedCrossBow()
+    {
+        projectileSpeed = 24;
+        reloadDelay = 0.25f;
+    }
+    public void decreaseSpeedCrossBow()
+    {
+        projectileSpeed = 12;
+        reloadDelay = 0.5f;
+    }
+
+    public void increaseSpeedSoda()
+    {
+        projectileSpeed = 24;
+        reloadDelay = 0.25f;
+    }
+    public void decreaseSpeedSoda()
+    {
+        projectileSpeed = 12;
+        reloadDelay = 0.5f;
+    }
+    
 
 }

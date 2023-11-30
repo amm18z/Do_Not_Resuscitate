@@ -28,15 +28,32 @@ public class Tower : MonoBehaviour
 
     private Enemy chosen_enemy;
 
+    private List<Enemy> enemy_queue;
+
     // Start is called before the first frame update
     void Start()
     {
         towerAction.SetAnimationDelay(shootingDelay);
+        
+    }
+
+    private void Awake()
+    {
+        enemy_queue = new List<Enemy>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        for(int i = 0; i < enemy_queue.Count; i++)
+        {
+            if (enemy_queue[i] == null)
+            {
+                enemy_queue.RemoveAt(i);
+                i--;
+            }
+        }
+
         towerAction.SetAnimationDelay(shootingDelay);
         // Rotate the tower towards chosen enemy and perform action
         if (chosen_enemy != null)
@@ -69,6 +86,12 @@ public class Tower : MonoBehaviour
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             chosen_enemy = temp;
         }
+        else if(collision.gameObject.tag == "enemy")
+        {
+            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            if (temp != null)
+                enemy_queue.Add(temp);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -77,7 +100,19 @@ public class Tower : MonoBehaviour
         {
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             if (chosen_enemy == temp)
+            {
                 chosen_enemy = null;
+                if (enemy_queue.Count > 0)
+                {
+                    chosen_enemy = enemy_queue[0];
+                    enemy_queue.RemoveAt(0);
+                }
+            }
+                
+            else if(enemy_queue.IndexOf(temp) > -1)
+            {
+                enemy_queue.Remove(temp);
+            }
         }
     }
 
