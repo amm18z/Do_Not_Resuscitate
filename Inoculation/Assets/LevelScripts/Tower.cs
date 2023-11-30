@@ -34,6 +34,11 @@ public class Tower : MonoBehaviour
     void Start()
     {
         towerAction.SetAnimationDelay(shootingDelay);
+        
+    }
+
+    private void Awake()
+    {
         enemy_queue = new List<Enemy>();
     }
 
