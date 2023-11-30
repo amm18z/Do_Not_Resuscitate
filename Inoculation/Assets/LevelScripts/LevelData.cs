@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LevelData : MonoBehaviour
@@ -34,7 +35,8 @@ public class LevelData : MonoBehaviour
 
     [SerializeField]
     private int speedMultiplier; // enemy speed multiplier
-    
+
+    public TextMeshProUGUI waveCounter;
     
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,8 @@ public class LevelData : MonoBehaviour
 
             waveStrengths.Add(tempWaveStrength);
         }
+
+        waveCounter.text = currentWave + " / " + waveCount;
 
     }
 
@@ -143,7 +147,9 @@ public class LevelData : MonoBehaviour
     {
         if (currentWave == waveCount || waveIsActive) return;
         waveIsActive = true;
+        currentWave += 1;
 
+        waveCounter.text = currentWave + " / " + waveCount;
         // Hide the begin wave UI elements
 
         StartCoroutine("runWave");
@@ -179,7 +185,7 @@ public class LevelData : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
 
-        currentWave += 1;
+        
         waveIsActive = false;
     }
 
