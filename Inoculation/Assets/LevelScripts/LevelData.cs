@@ -163,8 +163,11 @@ public class LevelData : MonoBehaviour
             // Retrieves the list of enemy prefabs from the enemy type for the level
             List<GameObject> enemyPrefabs = levelEnemyType.getEnemyPrefabs();
 
+            // Picks a random enemy from the available prefabs
+            int enemyIndex = Mathf.FloorToInt(Random.Range(0, enemyPrefabs.Count - 1));
+
             // Instantiates a new enemy
-            GameObject spawnedEnemy = GameObject.Instantiate(enemyPrefabs[0]); // Currently selects the first enemy in the set though this can be later improved to consider variable strength enemies
+            GameObject spawnedEnemy = GameObject.Instantiate(enemyPrefabs[enemyIndex]);
             
             // Moves the enemy to the first waypoint along the path
             spawnedEnemy.transform.position = pathWaypoints[0].position;
