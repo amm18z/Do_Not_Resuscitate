@@ -8,7 +8,9 @@ public class moveToLevel1 : MonoBehaviour
     // Start is called before the first frame update
     public int sceneIndex;
     public GameObject scenePrompt;
+    public GameObject sceneLoad;
     public PlayerController playerLogic;
+    private AsyncOperation asyncLoad;
 
     void Start()
     {
@@ -26,11 +28,23 @@ public class moveToLevel1 : MonoBehaviour
     public void YesChoice()
     {
         print("Switching Scenes");
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the level scene
+        scenePrompt.SetActive(false);
+        StartCoroutine(LoadAsyncScene()); //waits for loading to be true after scene loading call
     }
+    
     public void NoChoice()
     {
         scenePrompt.SetActive(false);
         playerLogic.moveSpeed = 2.0f;
+    }
+
+    IEnumerator LoadAsyncScene()
+    {
+        sceneLoad.SetActive(true);
+        asyncLoad = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single); // Load the level scene
+        while(!asyncLoad.isDone)
+        {       
+            yield return null;
+        }
     }
 }
