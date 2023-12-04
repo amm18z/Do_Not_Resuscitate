@@ -42,6 +42,7 @@ public class LevelData : MonoBehaviour
     private int speedMultiplier; // enemy speed multiplier
 
     public TextMeshProUGUI waveCounter;
+    public GameObject nextWaveLabel;
     
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,7 @@ public class LevelData : MonoBehaviour
         }
 
         waveCounter.text = currentWave + " / " + waveCount;
-
+        nextWaveLabel.SetActive(true);
     }
 
     private float waveStrengthMultiplier(int wave)
@@ -164,6 +165,8 @@ public class LevelData : MonoBehaviour
         waveIsActive = true;
         currentWave += 1;
 
+        nextWaveLabel.SetActive(false);
+
         waveCounter.text = currentWave + " / " + waveCount;
         // Hide the begin wave UI elements
 
@@ -206,6 +209,7 @@ public class LevelData : MonoBehaviour
 
         
         waveIsActive = false;
+        nextWaveLabel.SetActive(true);
     }
 
     private bool stillAlive()

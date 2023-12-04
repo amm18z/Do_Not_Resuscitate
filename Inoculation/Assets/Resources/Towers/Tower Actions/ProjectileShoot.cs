@@ -24,8 +24,14 @@ public class ProjectileShoot : Tower.TowerAction
 
     public Animator animator;
 
+    private LevelData level;
+    private int speedMultiplier = 1;
+
     private void Start()
     {
+        level = GameObject.Find("LevelData").GetComponent<LevelData>();
+        //speedMultiplier = level.getSpeedMultiplier();
+
         Tower temp = this.GetComponent<Tower>();
         try
         {
@@ -37,6 +43,11 @@ public class ProjectileShoot : Tower.TowerAction
             Debug.LogError(e.Message);
         }
         
+    }
+
+    private void Update()
+    {
+        //speedMultiplier = level.getSpeedMultiplier();
     }
 
     public override void SetAnimationDelay(float delay)
@@ -87,33 +98,37 @@ public class ProjectileShoot : Tower.TowerAction
         Debug.Log("Delaying action for animation");
         yield return new WaitForSeconds(animationDelay);
         
-        // Shoot projectile towards the enemy
-        GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
+        if (enemy != null)
+        {
+            // Shoot projectile towards the enemy
+            GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
 
-        Tower mainTower = this.GetComponent<Tower>();
+            Tower mainTower = this.GetComponent<Tower>();
 
-        Vector3 initialPosition = shotProjectile.transform.position;
-        Vector3 shootDirection = enemy.transform.position - shootPosition.position;
-        shootDirection = shootDirection.normalized;
-        shootDirection *= projectileSpeed;
+            Vector3 initialPosition = shotProjectile.transform.position;
+            Vector3 shootDirection = enemy.transform.position - shootPosition.position;
+            shootDirection = shootDirection.normalized;
+            shootDirection *= (projectileSpeed * speedMultiplier);
 
-        shotProjectile.transform.parent = null;
+            shotProjectile.transform.parent = null;
 
-        shotProjectile.transform.position = initialPosition;
-        shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
+            shotProjectile.transform.position = initialPosition;
+            shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
+        }
 
         StartCoroutine("reload");
     }
 
     public void increaseSpeedCrossBow()
     {
+        Debug.Log("Crossbow speed increased");
         projectileSpeed = 24;
-        reloadDelay = 0.25f;
+        reloadDelay = 0.5f;
     }
     public void decreaseSpeedCrossBow()
     {
         projectileSpeed = 12;
-        reloadDelay = 0.5f;
+        reloadDelay = 1f;
     }
 
     public void increaseSpeedSoda()
