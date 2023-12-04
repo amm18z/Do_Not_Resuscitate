@@ -121,14 +121,13 @@ public class ProjectileShoot : Tower.TowerAction
 
     public void increaseSpeedCrossBow()
     {
-        Debug.Log("Crossbow speed increased");
         projectileSpeed = 24;
-        reloadDelay = 0.5f;
+        reloadDelay = 0.25f;
     }
     public void decreaseSpeedCrossBow()
     {
         projectileSpeed = 12;
-        reloadDelay = 1f;
+        reloadDelay = .5f;
     }
 
     public void increaseSpeedSoda()
@@ -141,6 +140,14 @@ public class ProjectileShoot : Tower.TowerAction
         projectileSpeed = 12;
         reloadDelay = 0.5f;
     }
-    
 
+    public override void IncreaseSpeed()
+    {
+        increaseSpeedCrossBow();
+    }
+
+    public override void DecreaseSpeed()
+    {
+        decreaseSpeedCrossBow();
+    }
 }

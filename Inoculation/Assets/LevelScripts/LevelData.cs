@@ -225,11 +225,21 @@ public class LevelData : MonoBehaviour
     public void IncreaseSpeed()
     {
         speedMultiplier = 2;
+        Tower[] towers = GameObject.FindObjectsOfType<Tower>();
+        foreach(Tower t in towers)
+        {
+            t.IncreaseSpeed();
+        }
     }
 
     public void DecreaseSpeed()
     {
         speedMultiplier = 1;
+        Tower[] towers = GameObject.FindObjectsOfType<Tower>();
+        foreach (Tower t in towers)
+        {
+            t.DecreaseSpeed();
+        }
     }
 
     public bool isWaveActive()

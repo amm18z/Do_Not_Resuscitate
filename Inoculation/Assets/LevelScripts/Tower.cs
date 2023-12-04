@@ -10,6 +10,8 @@ public class Tower : MonoBehaviour
     {
         abstract public void performAction(GameObject enemy);
         abstract public void SetAnimationDelay(float delay);
+        abstract public void IncreaseSpeed();
+        abstract public void DecreaseSpeed();
     }
 
     [SerializeField]
@@ -112,6 +114,16 @@ public class Tower : MonoBehaviour
                 enemy_queue.Remove(temp);
             }
         }
+    }
+
+    public void IncreaseSpeed()
+    {
+        towerAction.IncreaseSpeed();
+    }
+
+    public void DecreaseSpeed()
+    {
+        towerAction.DecreaseSpeed();
     }
 
     public static GameObject getTower(int id)
