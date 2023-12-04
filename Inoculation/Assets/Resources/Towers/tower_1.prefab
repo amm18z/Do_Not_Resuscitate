@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3985466440694231804, guid: 8cf9050cd2d7e83469a0414f08d28ace, type: 3}
   shootPosition: {fileID: 1206200759817691441}
-  projectileSpeed: 4
+  projectileSpeed: 8
   reloadDelay: 1
   animator: {fileID: 7374592770148255434}
 --- !u!58 &6458132004504439449

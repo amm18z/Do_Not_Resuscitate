@@ -69,8 +69,7 @@ public class ProjectileShoot : Tower.TowerAction
             Debug.LogError(e.Message);
         }
         
-        if (!waitingForShot && !reloading)
-            StartCoroutine(delayShooting(enemy));
+        StartCoroutine(delayShooting(enemy));
         
     }
 
@@ -95,7 +94,7 @@ public class ProjectileShoot : Tower.TowerAction
 
         Vector3 initialPosition = shotProjectile.transform.position;
         Vector3 shootDirection = enemy.transform.position - shootPosition.position;
-        shootDirection.Normalize();
+        shootDirection = shootDirection.normalized;
         shootDirection *= projectileSpeed;
 
         shotProjectile.transform.parent = null;
