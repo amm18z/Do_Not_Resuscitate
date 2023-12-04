@@ -113,11 +113,13 @@ public class LevelData : MonoBehaviour
             if (enemyData.getHealth() <= 0)
             {
                 // If the enemy is out of health destroy the enemy
-                enemyData.destroyEnemy();
+                Enemy temp = enemyData;
                 playerInfo.Instance.ModifyLevelCurrency(25);
 
                 // Remove the enemy from the list and step back an index to reorient the counter
                 activeEnemies.Remove(enemyData.gameObject);
+
+                temp.destroyEnemy();
                 i--;
                 continue; // Skip the rest of the checks since the enemy is now destroyed
             }
@@ -145,7 +147,12 @@ public class LevelData : MonoBehaviour
             // If the enemy reaches the end of the path, the enemy is killed and removed from the list
             if(enemyData.getWaypointIndex() == pathWaypoints.Count - 1)
             {
-                enemyData.damage(99999);
+                Enemy temp = enemyData;
+
+                activeEnemies.Remove(enemyData.gameObject);
+
+                temp.destroyEnemy();
+                i--;
             }
 
         }

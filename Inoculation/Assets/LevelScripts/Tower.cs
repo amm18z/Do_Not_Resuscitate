@@ -58,8 +58,6 @@ public class Tower : MonoBehaviour
         // Rotate the tower towards chosen enemy and perform action
         if (chosen_enemy != null)
         {
-            
-
             Vector2 shootDirection = chosen_enemy.transform.position - this.transform.position;
             shootDirection = shootDirection.normalized;
             float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
