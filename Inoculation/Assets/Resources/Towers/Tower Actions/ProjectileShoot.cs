@@ -75,7 +75,6 @@ public class ProjectileShoot : Tower.TowerAction
 
     IEnumerator reload()
     {
-        reloading = true;
         waitingForShot = false;
         yield return new WaitForSeconds(reloadDelay);
         reloading = false;
@@ -84,6 +83,7 @@ public class ProjectileShoot : Tower.TowerAction
     IEnumerator delayShooting(GameObject enemy)
     {
         waitingForShot = true;
+        reloading = true;
         Debug.Log("Delaying action for animation");
         yield return new WaitForSeconds(animationDelay);
         
