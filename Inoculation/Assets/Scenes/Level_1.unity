@@ -4020,6 +4020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 1
+  levelNumber: 1
   health: 100
   baseLevelDifficulty: 70
   waveDifficultyMultiplier: 2
@@ -4057,8 +4058,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1392655364}
   - {fileID: 388935749}
+  - {fileID: 1392655364}
   - {fileID: 806489915}
   - {fileID: 1434603229}
   - {fileID: 1406948758}
