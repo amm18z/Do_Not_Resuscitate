@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 1
-  levelNumber: 1
+  levelNumber: 4
   health: 100
   baseLevelDifficulty: 70
   waveDifficultyMultiplier: 2
@@ -1719,7 +1719,7 @@ MonoBehaviour:
   - {fileID: 560432950}
   - {fileID: 202592078}
   - {fileID: 2078769511}
-  waveCount: 5
+  waveCount: 30
   levelEnemyType: {fileID: 11400000, guid: 14f272f380cdcc0489a5289eddac7def, type: 2}
   speedMultiplier: 0
   waveCounter: {fileID: 128886427}
