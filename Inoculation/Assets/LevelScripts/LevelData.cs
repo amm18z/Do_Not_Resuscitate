@@ -136,6 +136,7 @@ public class LevelData : MonoBehaviour
 
             // Moves the enemy to the newly calcualted position
             enemyData.move(newEnemyPosition);
+            enemyData.GetComponent<Renderer>().sortingOrder = enemyData.GetComponent<Renderer>().sortingOrder + 1;
 
             // Determines how far from the next waypoint the enemy is
             // If close enought, the enemy will now target the next waypoint

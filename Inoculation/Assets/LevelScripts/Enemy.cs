@@ -16,6 +16,13 @@ public class Enemy : MonoBehaviour
     public int getSpeed() { return speed / 10; }
     public int getHealth() { return health; }
     public int getStrength() { return strength; }
+    
+    public Renderer renderer;
+
+    void Start()
+    {
+        renderer = GetComponent<Renderer>();
+    }
     public void damage(int damagetaken)
     {
         health -= damagetaken;
@@ -31,6 +38,7 @@ public class Enemy : MonoBehaviour
     public void move(Vector2 newPosition)
     {
         this.transform.position = newPosition;
+        renderer.sortingOrder = renderer.sortingOrder++;
     }
 
 
