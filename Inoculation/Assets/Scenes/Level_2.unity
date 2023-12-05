@@ -1837,7 +1837,7 @@ MonoBehaviour:
   waveCount: 30
   levelEnemyType: {fileID: 11400000, guid: 14f272f380cdcc0489a5289eddac7def, type: 2}
   enemyIndexLower: 0
-  enemyIndexUpper: 1
+  enemyIndexUpper: 2
   speedMultiplier: 1
   waveCounter: {fileID: 125671645}
   nextWaveLabel: {fileID: 1966727798}
