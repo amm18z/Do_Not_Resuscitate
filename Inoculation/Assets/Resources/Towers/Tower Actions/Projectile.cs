@@ -15,7 +15,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         age = 0;
-        damage = 20;
         rigidbody = this.GetComponent<Rigidbody2D>();
     }
 
