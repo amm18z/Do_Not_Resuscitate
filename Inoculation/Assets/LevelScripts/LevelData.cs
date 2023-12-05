@@ -31,7 +31,9 @@ public class LevelData : MonoBehaviour
     private EnemyType levelEnemyType;
     private List<GameObject> activeEnemies;
 
+    [SerializeField]
     private int enemyIndexLower = 0;
+    [SerializeField]
     private int enemyIndexUpper = 0;
 
     private int baseEnemySpawningDelay = 6;
@@ -47,8 +49,6 @@ public class LevelData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyIndexLower = levelNumber - 1;
-        enemyIndexUpper = enemyIndexLower + 3;
 
         // Initializes the lists for storing each wave's strength and the spawned enemies
         waveStrengths = new List<int>();
@@ -184,7 +184,10 @@ public class LevelData : MonoBehaviour
 
 
             // Picks a random enemy from the available prefabs
-            int enemyIndex = Mathf.FloorToInt(Random.Range(enemyIndexLower, Mathf.Min(enemyIndexUpper, enemyPrefabs.Count)));
+            //This line is what made some levels not work as enemyPrefabs's count is higher than the highest index possible
+            //and because of the way it was calculated the enemyIndexUpper before it would lead to errors
+            //It has been modified in order to prevent further errors
+            int enemyIndex = Mathf.FloorToInt(Random.Range(enemyIndexLower, Mathf.Min(enemyIndexUpper, enemyPrefabs.Count - 1)));
 
             // Instantiates a new enemy
             GameObject spawnedEnemy = GameObject.Instantiate(enemyPrefabs[enemyIndex]);
