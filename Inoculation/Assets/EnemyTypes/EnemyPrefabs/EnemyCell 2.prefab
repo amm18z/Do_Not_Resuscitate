@@ -103,6 +103,7 @@ MonoBehaviour:
   speed: 20
   health: 125
   strength: 10
+  renderer: {fileID: 3932628046096519409}
 --- !u!58 &8865260125110157388
 CircleCollider2D:
   m_ObjectHideFlags: 0
