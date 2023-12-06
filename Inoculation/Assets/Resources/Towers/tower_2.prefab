@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1157922471
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e7428a7ae25d962429237e79a902048f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,6 +104,7 @@ MonoBehaviour:
   strength: 5
   cost: 150
   towerAction: {fileID: 7389147968029585308}
+  shootingDelay: 0
 --- !u!114 &7389147968029585308
 MonoBehaviour:
   m_ObjectHideFlags: 0
