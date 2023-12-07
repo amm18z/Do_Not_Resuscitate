@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  health: 100
+  health: 80
   strength: 10
   renderer: {fileID: 3932628046096519409}
 --- !u!58 &8865260125110157388

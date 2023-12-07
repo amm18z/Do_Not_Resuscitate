@@ -98,6 +98,7 @@ public class LevelData : MonoBehaviour
         {
             // Have completed all waves in the level
             // Trigger game won UI screen
+
         }
     }
 
@@ -152,6 +153,8 @@ public class LevelData : MonoBehaviour
                 Enemy temp = enemyData;
 
                 activeEnemies.Remove(enemyData.gameObject);
+
+                health -= temp.getStrength();
 
                 temp.destroyEnemy();
                 i--;
@@ -221,6 +224,7 @@ public class LevelData : MonoBehaviour
         if (health <= 0)
         {
             // End level and trigger the lost game UI screen
+
             return false;
         }
         return true;
