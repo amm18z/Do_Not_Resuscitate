@@ -150,7 +150,7 @@ public class LevelData : MonoBehaviour
             if(enemyData.getWaypointIndex() == pathWaypoints.Count - 1)
             {
                 Enemy temp = enemyData;
-
+                
                 activeEnemies.Remove(enemyData.gameObject);
 
                 temp.destroyEnemy();
