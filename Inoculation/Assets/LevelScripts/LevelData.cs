@@ -45,6 +45,8 @@ public class LevelData : MonoBehaviour
 
     public TextMeshProUGUI waveCounter;
     public GameObject nextWaveLabel;
+
+    public TextMeshProUGUI healthCounter;
     
     // Start is called before the first frame update
     void Start()
@@ -100,6 +102,8 @@ public class LevelData : MonoBehaviour
             // Trigger game won UI screen
 
         }
+
+        healthCounter.text = health.ToString();
     }
 
     private void pathStep()
