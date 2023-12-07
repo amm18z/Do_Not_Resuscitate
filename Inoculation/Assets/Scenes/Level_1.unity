@@ -4306,7 +4306,7 @@ MonoBehaviour:
   speedMultiplier: 1
   waveCounter: {fileID: 737249700}
   nextWaveLabel: {fileID: 1990011920}
-  healthCounter: {fileID: 0}
+  healthCounter: {fileID: 1691302870}
 --- !u!4 &776596575
 Transform:
   m_ObjectHideFlags: 0
