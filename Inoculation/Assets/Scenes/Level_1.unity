@@ -4539,7 +4539,7 @@ Transform:
   m_GameObject: {fileID: 890792080}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.52, y: -3.55, z: 0}
+  m_LocalPosition: {x: 7.52, y: -1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4601,7 +4601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d06009391271461e8812b7e1b8ed142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneIndex: 1
 --- !u!1 &984035570
 GameObject:
   m_ObjectHideFlags: 0
@@ -7423,7 +7423,7 @@ Transform:
   m_GameObject: {fileID: 1182357805}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: -1.65, z: 0}
+  m_LocalPosition: {x: 7.5, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7963,7 +7963,7 @@ Transform:
   m_GameObject: {fileID: 1459527111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.52, y: -5.9, z: 0}
+  m_LocalPosition: {x: 7.52, y: -3.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10160,6 +10160,10 @@ PrefabInstance:
     - target: {fileID: 1505641635424222215, guid: 9f6d8fe1020d346f0b21c050e69b2817, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154566340801854427, guid: 9f6d8fe1020d346f0b21c050e69b2817, type: 3}
+      propertyPath: sceneIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7527231948334468585, guid: 9f6d8fe1020d346f0b21c050e69b2817, type: 3}
       propertyPath: m_Name
