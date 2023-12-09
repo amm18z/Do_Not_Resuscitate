@@ -7063,7 +7063,7 @@ MonoBehaviour:
   secondScreen: {fileID: 310646738}
   thirdScreen: {fileID: 160052074}
   playerData: {fileID: 17868986}
-  debugMode: 1
+  debugMode: 0
 --- !u!1 &1926473047
 GameObject:
   m_ObjectHideFlags: 0

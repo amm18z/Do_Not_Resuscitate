@@ -2801,7 +2801,7 @@ MonoBehaviour:
   secondScreen: {fileID: 1179765207}
   thirdScreen: {fileID: 2014377585}
   playerData: {fileID: 1294655589}
-  debugMode: 1
+  debugMode: 0
 --- !u!1 &563882359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,6 +3157,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8638543680753623175, guid: 7ddf22af5b97ca24b80bd204db1cdce8, type: 3}
+        m_TargetAssemblyTypeName: ProjectileShoot, Assembly-CSharp
+        m_MethodName: DecreaseSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 620923130}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -7851,6 +7863,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 776596574}
         m_TargetAssemblyTypeName: LevelData, Assembly-CSharp
+        m_MethodName: IncreaseSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8638543680753623175, guid: 7ddf22af5b97ca24b80bd204db1cdce8, type: 3}
+        m_TargetAssemblyTypeName: ProjectileShoot, Assembly-CSharp
         m_MethodName: IncreaseSpeed
         m_Mode: 1
         m_Arguments:
