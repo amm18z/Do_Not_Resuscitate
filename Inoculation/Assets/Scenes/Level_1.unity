@@ -4526,6 +4526,8 @@ MonoBehaviour:
   waveCounter: {fileID: 737249700}
   nextWaveLabel: {fileID: 1990011920}
   healthCounter: {fileID: 1691302870}
+  winScreen: {fileID: 398398063}
+  loseScreen: {fileID: 4317601685846463272}
 --- !u!4 &776596575
 Transform:
   m_ObjectHideFlags: 0
@@ -10935,6 +10937,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f6d8fe1020d346f0b21c050e69b2817, type: 3}
+--- !u!1 &4317601685846463272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7527231948334468585, guid: 9f6d8fe1020d346f0b21c050e69b2817, type: 3}
+  m_PrefabInstance: {fileID: 4317601685846463271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -47,10 +47,16 @@ public class LevelData : MonoBehaviour
     public GameObject nextWaveLabel;
 
     public TextMeshProUGUI healthCounter;
+
+    public GameObject winScreen;
+    public GameObject loseScreen;
     
     // Start is called before the first frame update
     void Start()
     {
+
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
 
         // Initializes the lists for storing each wave's strength and the spawned enemies
         waveStrengths = new List<int>();
@@ -100,7 +106,7 @@ public class LevelData : MonoBehaviour
         {
             // Have completed all waves in the level
             // Trigger game won UI screen
-
+            winScreen.SetActive(true);
         }
 
         healthCounter.text = health.ToString();
@@ -228,7 +234,7 @@ public class LevelData : MonoBehaviour
         if (health <= 0)
         {
             // End level and trigger the lost game UI screen
-
+            loseScreen.SetActive(true);
             return false;
         }
         return true;
