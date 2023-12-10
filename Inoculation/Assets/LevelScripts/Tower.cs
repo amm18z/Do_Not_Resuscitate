@@ -137,4 +137,9 @@ public class Tower : MonoBehaviour
 
         return prefab;
     }
+
+    public void modifyShootingDelay(float modifyVal)
+    {
+        shootingDelay = modifyVal;
+    }
 }
