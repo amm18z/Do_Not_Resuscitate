@@ -134,10 +134,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7374592770148255434}
   id: 1
-  strength: 5
+  strength: 2
   cost: 100
   towerAction: {fileID: 8638543680753623175}
-  shootingDelay: 0.25
+  shootingDelay: 0.35
 --- !u!114 &8638543680753623175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914cdf3b1436f64b90b5c8ab88eac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 4624810822423018294}
   projectile: {fileID: 3985466440694231804, guid: 8cf9050cd2d7e83469a0414f08d28ace, type: 3}
   shootPosition: {fileID: 1206200759817691441}
-  projectileSpeed: 16
-  reloadDelay: 1
+  projectileSpeed: 10
+  reloadDelay: 0.9
   animator: {fileID: 7374592770148255434}
 --- !u!58 &6458132004504439449
 CircleCollider2D:

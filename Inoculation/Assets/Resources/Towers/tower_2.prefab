@@ -101,9 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6880967280073666107}
   id: 2
-  strength: 5
+  strength: 3
   cost: 150
   towerAction: {fileID: 7389147968029585308}
+  shootingDelay: 0
 --- !u!114 &7389147968029585308
 MonoBehaviour:
   m_ObjectHideFlags: 0
