@@ -10,6 +10,7 @@ public class moveToLevel1 : MonoBehaviour
     public float minimumLoadTime;  
     public GameObject scenePrompt;
     public GameObject sceneLoad;
+    public GameObject iconLoad;
     public PlayerController playerLogic;
     private AsyncOperation asyncLoad;
    
@@ -44,6 +45,7 @@ public class moveToLevel1 : MonoBehaviour
     {
 
         sceneLoad.SetActive(true);
+        iconLoad.SetActive(true);
         float currentLoadTime = 0f;
         while (currentLoadTime < minimumLoadTime)
         {
