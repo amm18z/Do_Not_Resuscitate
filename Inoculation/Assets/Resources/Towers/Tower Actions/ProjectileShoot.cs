@@ -18,12 +18,20 @@ public class ProjectileShoot : Tower.TowerAction
     private float reloadDelay = 1;
 
     private bool reloading = false;
+    private bool waitingForShot = false;
 
+    private float animationDelay = 0.0f;
 
     public Animator animator;
 
+    private LevelData level;
+    private int speedMultiplier = 1;
+
     private void Start()
     {
+        level = GameObject.Find("LevelData").GetComponent<LevelData>();
+        //speedMultiplier = level.getSpeedMultiplier();
+
         Tower temp = this.GetComponent<Tower>();
         try
         {
@@ -37,9 +45,19 @@ public class ProjectileShoot : Tower.TowerAction
         
     }
 
+    private void Update()
+    {
+        //speedMultiplier = level.getSpeedMultiplier();
+    }
+
+    public override void SetAnimationDelay(float delay)
+    {
+        animationDelay = delay;
+    }
+
     public override void performAction(GameObject enemy)
     {
-        if (reloading)
+        if (reloading || waitingForShot)
         {
             try
             {
@@ -62,26 +80,74 @@ public class ProjectileShoot : Tower.TowerAction
             Debug.LogError(e.Message);
         }
         
-
-        StartCoroutine("delayShooting");
-
-        // Shoot projectile towards the enemy
-        GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
-
-        Tower mainTower = this.GetComponent<Tower>();
-
-        Vector3 shootDirection = enemy.transform.position - shootPosition.position;
-        shootDirection.Normalize();
-        shootDirection *= projectileSpeed;
-
-        shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
+        StartCoroutine(delayShooting(enemy));
+        
     }
 
-    IEnumerator delayShooting()
+    IEnumerator reload()
     {
-        reloading = true;
+        waitingForShot = false;
         yield return new WaitForSeconds(reloadDelay);
         reloading = false;
     }
 
+    IEnumerator delayShooting(GameObject enemy)
+    {
+        waitingForShot = true;
+        reloading = true;
+        Debug.Log("Delaying action for animation");
+        yield return new WaitForSeconds(animationDelay);
+        
+        if (enemy != null)
+        {
+            // Shoot projectile towards the enemy
+            GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
+
+            Tower mainTower = this.GetComponent<Tower>();
+
+            Vector3 initialPosition = shotProjectile.transform.position;
+            Vector3 shootDirection = enemy.transform.position - shootPosition.position;
+            shootDirection = shootDirection.normalized;
+            shootDirection *= (projectileSpeed * speedMultiplier);
+
+            shotProjectile.transform.parent = null;
+
+            shotProjectile.transform.position = initialPosition;
+            shotProjectile.GetComponent<Rigidbody2D>().velocity = shootDirection;
+        }
+
+        StartCoroutine("reload");
+    }
+
+    public void increaseSpeedCrossBow()
+    {
+        projectileSpeed = 24;
+        reloadDelay = 0.25f;
+    }
+    public void decreaseSpeedCrossBow()
+    {
+        projectileSpeed = 12;
+        reloadDelay = .5f;
+    }
+
+    public void increaseSpeedSoda()
+    {
+        projectileSpeed = 24;
+        reloadDelay = 0.25f;
+    }
+    public void decreaseSpeedSoda()
+    {
+        projectileSpeed = 12;
+        reloadDelay = 0.5f;
+    }
+
+    public override void IncreaseSpeed()
+    {
+        increaseSpeedCrossBow();
+    }
+
+    public override void DecreaseSpeed()
+    {
+        decreaseSpeedCrossBow();
+    }
 }

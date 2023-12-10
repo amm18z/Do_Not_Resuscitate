@@ -10,9 +10,10 @@ public class playerInfo : MonoBehaviour
     public int completeLevels;
     public int menuCurrency;
     public int levelCurrency;
-    
-    
-    
+    public bool HasPlayedIntro;
+    public bool HasPlayedLevelIntro;
+    public purchaseItem UpdateObject; // not applicable to menu and levels
+  
     
 
     public static playerInfo Instance;
@@ -32,6 +33,40 @@ public class playerInfo : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetHas(int HasIntro)
+    {
+        // set bool based on if played
+        if (HasIntro == 1)
+        {
+            HasPlayedIntro = true;
+        }
+        else
+        {
+            HasPlayedIntro = false;
+        }
+    }
+    public void SetHasLevel(int HasIntroLevel)
+    {
+        // set bool based on if played
+        if (HasIntroLevel == 1)
+        {
+            HasPlayedLevelIntro = true;
+        }
+        else
+        {
+            HasPlayedLevelIntro = false;
+        }
+    }
+
+    public bool HasIntroPlayed() // if the intro has played before
+    {
+        return HasPlayedIntro;
+    }
+    public bool HasLevelIntroPlayed() // if the intro has played before
+    {
+        return HasPlayedIntro;
     }
 
     public int GetLevelCurrency()
@@ -69,7 +104,6 @@ public class playerInfo : MonoBehaviour
     {
         // reset completed levels
         completeLevels = levels;
-        
     }
 
     public void AddMoney()
@@ -77,20 +111,20 @@ public class playerInfo : MonoBehaviour
         // add button for debug
         menuCurrency = menuCurrency + 100;
         levelCurrency = levelCurrency + 100;
+        UpdateObject.UpdateMenuCurrency(); // update money
     }
     public void SubMoney()
     {
         // sub button for debug
         menuCurrency = menuCurrency - 100;
         levelCurrency = levelCurrency - 100;
-        
+        UpdateObject.UpdateMenuCurrency(); // update money
     }
 
     public void IncrementCompletedLevels()
     {
         // complete another level
         completeLevels++;
-        
     }
     
 

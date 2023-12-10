@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private int speed = 10;
+    private float speed = 10;
     [SerializeField]
     private int health = 100;
     [SerializeField]
@@ -13,9 +13,16 @@ public class Enemy : MonoBehaviour
 
     private int currentWaypointIndex = 0;
 
-    public int getSpeed() { return speed / 10; }
+    public float getSpeed() { return speed / 10; }
     public int getHealth() { return health; }
     public int getStrength() { return strength; }
+    
+    public Renderer renderer;
+
+    void Start()
+    {
+        renderer = GetComponent<Renderer>();
+    }
     public void damage(int damagetaken)
     {
         health -= damagetaken;
@@ -31,6 +38,7 @@ public class Enemy : MonoBehaviour
     public void move(Vector2 newPosition)
     {
         this.transform.position = newPosition;
+        renderer.sortingOrder = renderer.sortingOrder++;
     }
 
 

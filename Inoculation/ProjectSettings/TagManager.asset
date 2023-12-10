@@ -44,3 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 2682805359
+    locked: 0
+  - name: Towers
+    uniqueID: 3137044825
+    locked: 0
+  - name: Projectile
+    uniqueID: 3237411531
+    locked: 0
+  - name: Explosion
+    uniqueID: 2213211657
+    locked: 0

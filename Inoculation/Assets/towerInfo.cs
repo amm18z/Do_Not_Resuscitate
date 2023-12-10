@@ -22,13 +22,15 @@ public class towerInfo : MonoBehaviour
     
 
     public int GetTowerPrice()
-    { // get tower price 
+    { 
+        // get tower price 
         return price;
     }
     
 
     public void RemoveTower()
-    { // set the tower obj active
+    { 
+        // set the tower obj active
         TowerUI.SetActive(false);
         
     }
@@ -45,23 +47,17 @@ public class towerInfo : MonoBehaviour
     }
 
     public int isTowerPurchased()
-    { // check if the player has it
+    { 
+        // check if the player has it
         // 1 - true
         // 0 - false
         // can make into bool if anyone needs
-        return PlayerPrefs.GetInt(TowerName);
+        return PlayerPrefs.GetInt(TowerName); 
     }
         
     public void AddTower()
     {
         TowerUI.SetActive(true);
-        
     }
     
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

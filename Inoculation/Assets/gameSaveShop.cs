@@ -23,6 +23,7 @@ public class gameSaveShop : MonoBehaviour
         // easier in tower info, so if need modification to tower check that
         PlayerPrefs.SetInt("menuCurr", playerData.GetMenuCurrency());
         PlayerPrefs.SetInt("levelCurr", playerData.GetLevelCurrency());
+        
     }
 
     public void LoadGame()
@@ -31,5 +32,6 @@ public class gameSaveShop : MonoBehaviour
         // dont need to create an array of towers etc because its within the tower obj
         playerData.SetMenuCurrency(PlayerPrefs.GetInt("menuCurr"));
         playerData.SetLevelCurrency(PlayerPrefs.GetInt("levelCurr"));
+        playerData.SetHas(PlayerPrefs.GetInt("Intro")); // See if player has gone to 
     }
 }

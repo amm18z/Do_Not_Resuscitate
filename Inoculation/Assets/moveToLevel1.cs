@@ -7,14 +7,9 @@ public class moveToLevel1 : MonoBehaviour
 {
     // Start is called before the first frame update
     public int sceneIndex;
-    public float minimumLoadTime;  
     public GameObject scenePrompt;
-    public GameObject sceneLoad;
-    public GameObject iconLoad;
     public PlayerController playerLogic;
-    private AsyncOperation asyncLoad;
-   
-
+    public saveGame SaveGame;
     void Start()
     {
         playerLogic = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -31,34 +26,12 @@ public class moveToLevel1 : MonoBehaviour
     public void YesChoice()
     {
         print("Switching Scenes");
-        scenePrompt.SetActive(false);
-        StartCoroutine(LoadAsyncScene()); //waits for loading to be true after scene loading call
+        SaveGame.SaveGame(); // Saves Game on entry
+        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the level scene
     }
-    
     public void NoChoice()
     {
         scenePrompt.SetActive(false);
         playerLogic.moveSpeed = 2.0f;
     }
-
-    private IEnumerator LoadAsyncScene()
-    {
-
-        sceneLoad.SetActive(true);
-        iconLoad.SetActive(true);
-        float currentLoadTime = 0f;
-        while (currentLoadTime < minimumLoadTime)
-        {
-            currentLoadTime += Time.deltaTime;
-            yield return null;
-        }
-        asyncLoad = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single); // Load the level scene
-        while(!asyncLoad.isDone)
-        {
-          currentLoadTime += Time.deltaTime;
-          yield return null;
-        }
-
-    }
-   
 }
