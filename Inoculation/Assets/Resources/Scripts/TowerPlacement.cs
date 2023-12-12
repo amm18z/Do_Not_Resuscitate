@@ -38,16 +38,20 @@ public class TowerPlacement : MonoBehaviour
         {
             tower3LockCover.SetActive(true);
         }
-        //if (PlayerPrefs.GetInt("bandaidminigun") == 0)
-        //{
-        //    tower4LockCover.SetActive(true);
-        //}
-        //if (PlayerPrefs.GetInt("jimmy") == 0)
-        //
-        //    tower5LockCover.SetActive(true);
-        //}
+        if (PlayerPrefs.GetInt("bandaidminigun") == 0)
+        {
+            tower4LockCover.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("jimmy") == 0)
+        {
+
+            tower5LockCover.SetActive(true);
+        }
         // waiting for towers 4 and 5 to be added to the shop before they can be unlocked
     }
+        
+    
 
     // Update is called once per frame
     void Update()
