@@ -107,6 +107,10 @@ public class LevelData : MonoBehaviour
             // Have completed all waves in the level
             // Trigger game won UI screen
             winScreen.SetActive(true);
+            if (levelNumber > playerInfo.Instance.GetCompletedLevels())
+            {
+                playerInfo.Instance.IncrementCompletedLevels();
+            }
         }
 
         healthCounter.text = health.ToString();
