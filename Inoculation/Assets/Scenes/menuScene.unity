@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33537da4f92a3a74a8c85cd46add599a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
+  sceneIndex: 5
   minimumLoadTime: 5
   scenePrompt: {fileID: 378495980}
   sceneLoad: {fileID: 2105795048}
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33537da4f92a3a74a8c85cd46add599a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
+  sceneIndex: 4
   minimumLoadTime: 5
   scenePrompt: {fileID: 499925977}
   sceneLoad: {fileID: 2105795048}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33537da4f92a3a74a8c85cd46add599a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
+  sceneIndex: 6
   minimumLoadTime: 5
   scenePrompt: {fileID: 1533444979}
   sceneLoad: {fileID: 2105795048}
@@ -9107,7 +9107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33537da4f92a3a74a8c85cd46add599a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
+  sceneIndex: 7
   minimumLoadTime: 5
   scenePrompt: {fileID: 367124851}
   sceneLoad: {fileID: 2105795048}
