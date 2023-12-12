@@ -33,6 +33,7 @@ public class TowerPlacement : MonoBehaviour
                 if (playerInfo.Instance.GetLevelCurrency() >= selectedObject.GetComponent<Tower>().getCost())
                 {
                     playerInfo.Instance.ModifyLevelCurrency(-(selectedObject.GetComponent<Tower>().getCost()));
+                    selectedObject.GetComponent<Tower>().isPlaced = true;   //neccessary to make sure Tower5
                     PlaceObject();
                 }
                 else
@@ -82,6 +83,11 @@ public class TowerPlacement : MonoBehaviour
         if (selectedObject.TryGetComponent<PathSanitize>(out PathSanitize script2))
         {
             script2.enabled = state;
+        }
+
+        if (selectedObject.TryGetComponent<BoostActionSpeed>(out BoostActionSpeed script3))
+        {
+            script3.enabled = state;
         }
     }
 

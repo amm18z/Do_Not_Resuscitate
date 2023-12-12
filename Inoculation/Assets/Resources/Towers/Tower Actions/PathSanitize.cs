@@ -85,11 +85,13 @@ public class PathSanitize : Tower.TowerAction
     }
     public override void IncreaseSpeed()
     {
-        sanitizeDelay = 1;
+        //sanitizeDelay = 1;    //old
+        sanitizeDelay = sanitizeDelay / 2;  //new
     }
 
     public override void DecreaseSpeed()
     {
-        sanitizeDelay = 2;
+        //sanitizeDelay = 2;    //old
+        sanitizeDelay = sanitizeDelay * 2;  //new
     }
 }
