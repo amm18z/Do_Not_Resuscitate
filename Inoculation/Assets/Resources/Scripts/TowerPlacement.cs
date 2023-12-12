@@ -14,10 +14,39 @@ public class TowerPlacement : MonoBehaviour
 
     [SerializeField] private LayerMask layerMask;
 
+    [SerializeField] private GameObject tower1LockCover;
+    [SerializeField] private GameObject tower2LockCover;
+    [SerializeField] private GameObject tower3LockCover;
+    [SerializeField] private GameObject tower4LockCover;
+    [SerializeField] private GameObject tower5LockCover;
+
+
     // Start is called before the first frame update
     void Start()
     {
         playerInfo.Instance.SetLevelCurrency(200);
+
+        if (PlayerPrefs.GetInt("crossbow") == 0)
+        {
+            tower1LockCover.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("sanitizer") == 0)
+        {
+            tower2LockCover.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("sodamachine") == 0)
+        {
+            tower3LockCover.SetActive(true);
+        }
+        //if (PlayerPrefs.GetInt("bandaidminigun") == 0)
+        //{
+        //    tower4LockCover.SetActive(true);
+        //}
+        //if (PlayerPrefs.GetInt("jimmy") == 0)
+        //
+        //    tower5LockCover.SetActive(true);
+        //}
+        // waiting for towers 4 and 5 to be added to the shop before they can be unlocked
     }
 
     // Update is called once per frame
