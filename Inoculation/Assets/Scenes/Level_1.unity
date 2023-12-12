@@ -5517,6 +5517,11 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  tower1LockCover: {fileID: 6382277344891560759}
+  tower2LockCover: {fileID: 6382277344891560758}
+  tower3LockCover: {fileID: 6382277344891560757}
+  tower4LockCover: {fileID: 6382277344891560756}
+  tower5LockCover: {fileID: 6382277344891560755}
 --- !u!4 &1166797459
 Transform:
   m_ObjectHideFlags: 0
@@ -8181,6 +8186,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+--- !u!1 &6382277344891560755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4339644176476613216, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 6382277344891560754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6382277344891560756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9121421178460460957, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 6382277344891560754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6382277344891560757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7431774181181379994, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 6382277344891560754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6382277344891560758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5146983539153727950, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 6382277344891560754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6382277344891560759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7406037735464675530, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 6382277344891560754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

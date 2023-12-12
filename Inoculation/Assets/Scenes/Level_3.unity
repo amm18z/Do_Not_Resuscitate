@@ -2282,6 +2282,31 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6620394708294595796, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
   m_PrefabInstance: {fileID: 937973685}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &937973687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4339644176476613216, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 937973685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &937973688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9121421178460460957, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 937973685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &937973689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7431774181181379994, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 937973685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &937973690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5146983539153727950, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 937973685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &937973691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7406037735464675530, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+  m_PrefabInstance: {fileID: 937973685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941812329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4417,6 +4442,11 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  tower1LockCover: {fileID: 937973691}
+  tower2LockCover: {fileID: 937973690}
+  tower3LockCover: {fileID: 937973689}
+  tower4LockCover: {fileID: 937973688}
+  tower5LockCover: {fileID: 937973687}
 --- !u!4 &1166797459
 Transform:
   m_ObjectHideFlags: 0

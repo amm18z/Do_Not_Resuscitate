@@ -3415,7 +3415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 200
-  TowerName: Sanatize
+  TowerName: sanitizer
   TowerUI: {fileID: 1023952768}
 --- !u!1 &1062673617
 GameObject:
@@ -4003,7 +4003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 100
-  TowerName: CrossBow
+  TowerName: crossbow
   TowerUI: {fileID: 966908440}
 --- !u!1 &1183403337
 GameObject:
@@ -6195,7 +6195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 300
-  TowerName: SoadMachine
+  TowerName: sodamachine
   TowerUI: {fileID: 1560748676}
 --- !u!1 &1619694365
 GameObject:
