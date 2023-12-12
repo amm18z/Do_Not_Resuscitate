@@ -9,6 +9,7 @@ public class LevelData : MonoBehaviour
     private bool debugMode = false;
 
     public int levelNumber = 1;
+    public int menuCurrencyReward = 400;
 
     [SerializeField]
     private int health = 100;
@@ -111,6 +112,8 @@ public class LevelData : MonoBehaviour
             {
                 playerInfo.Instance.IncrementCompletedLevels();
             }
+            int money = playerInfo.Instance.GetMenuCurrency() + menuCurrencyReward;
+            playerInfo.Instance.SetMenuCurrency(money);
         }
 
         healthCounter.text = health.ToString();
