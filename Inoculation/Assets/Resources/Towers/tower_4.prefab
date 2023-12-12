@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 8638543680753623175}
   - component: {fileID: 6458132004504439449}
   - component: {fileID: 7374592770148255434}
+  - component: {fileID: -6744595508639028367}
   m_Layer: 0
   m_Name: tower_4
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +138,9 @@ MonoBehaviour:
   strength: 2
   cost: 275
   towerAction: {fileID: 8638543680753623175}
-  shootingDelay: 0
+  shootingDelay: 0.01
+  isPlaced: 0
+  isBoosted: 0
 --- !u!114 &8638543680753623175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +215,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &-6744595508639028367
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798835426779528506}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
