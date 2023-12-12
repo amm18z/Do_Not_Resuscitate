@@ -16,8 +16,9 @@ public class moveToLevel1 : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) // If the player enters the collider move them
     {
-        print("Trigger Entered"); // For Debug
-        if (other.tag == "Player") // Identify if the obj passed is a player
+        //print("Trigger Entered"); // For Debug
+        int lastCompletedLevel = playerInfo.Instance.GetCompletedLevels();
+        if ((sceneIndex - 3) <= lastCompletedLevel && other.tag == "Player") // Identify if the obj passed is a player
         {
             scenePrompt.SetActive(true);
             playerLogic.moveSpeed = 0.0f;
