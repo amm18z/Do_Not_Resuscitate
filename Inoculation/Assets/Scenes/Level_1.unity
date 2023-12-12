@@ -8081,10 +8081,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlacementPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1974441374121100520, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3905055834770707978, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1166797458}
+    - target: {fileID: 5146983539153727950, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146983539153727950, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5581917126015513170, guid: 6829b2b308e10114d8d9160d49f9a26d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

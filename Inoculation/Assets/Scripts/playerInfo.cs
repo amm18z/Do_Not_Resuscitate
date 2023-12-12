@@ -13,14 +13,13 @@ public class playerInfo : MonoBehaviour
     public bool HasPlayedIntro;
     public bool HasPlayedLevelIntro;
     public purchaseItem UpdateObject; // not applicable to menu and levels
-  
     
 
     public static playerInfo Instance;
 
     public void Start()
     {
-        
+
     }
 
     private void Awake()
@@ -31,6 +30,7 @@ public class playerInfo : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -140,9 +140,5 @@ public class playerInfo : MonoBehaviour
         menuCurrency = menuCurrency + money;
         
     }
-
-   
-    
-
 
 }

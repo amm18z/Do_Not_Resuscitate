@@ -13,6 +13,20 @@ public class saveGame : MonoBehaviour
     public void Start()
     {
         LoadGame();
+        InitializeTowerUnlocks();
+    }
+
+    public void InitializeTowerUnlocks()
+    {
+        String[] keys = { "crossbow", "sanitizer", "sodamachine", "bandaidminigun", "jimmy" };
+        foreach (String key in keys)
+        {
+            if (PlayerPrefs.GetInt(key, -1) == -1)
+            {
+                PlayerPrefs.SetInt(key, 0);
+            }
+        }
+        PlayerPrefs.SetInt("crossbow", 1);
     }
 
     // Start is called before the first frame update
@@ -28,6 +42,7 @@ public class saveGame : MonoBehaviour
         PlayerPrefs.SetInt("levelCurr", playerData.GetLevelCurrency());
         PlayerPrefs.SetInt("completedLevels", playerData.GetCompletedLevels());
         PlayerPrefs.SetInt("hasPlayed", 1); // the player has played game
+
     }
 
     public void LoadGame()
@@ -44,6 +59,7 @@ public class saveGame : MonoBehaviour
         // set levels completed
         playerData.SetCompletedLevels(PlayerPrefs.GetInt("completedLevels"));
         playerData.SetHasLevel(PlayerPrefs.GetInt("levelIntro"));
+
     }
 
     public void AddMoney()

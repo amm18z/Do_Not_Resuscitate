@@ -107,6 +107,10 @@ public class LevelData : MonoBehaviour
             // Have completed all waves in the level
             // Trigger game won UI screen
             winScreen.SetActive(true);
+            if (levelNumber > playerInfo.Instance.GetCompletedLevels())
+            {
+                playerInfo.Instance.IncrementCompletedLevels();
+            }
         }
 
         healthCounter.text = health.ToString();
@@ -216,7 +220,7 @@ public class LevelData : MonoBehaviour
             waveStrengths[currentWave] -= enemyData.getStrength();
 
             // Waits for 1 second before continuing the loop
-            yield return new WaitForSeconds(baseEnemySpawningDelay - currentWave);
+            yield return new WaitForSeconds(baseEnemySpawningDelay - (5.5f * (float)currentWave/waveCount));
         }
         
         // After all the enemies have been spawned, continue waiting until there are no longer any enemies on the screen
