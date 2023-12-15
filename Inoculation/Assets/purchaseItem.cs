@@ -12,7 +12,13 @@ public class purchaseItem : MonoBehaviour
     public gameSaveShop SaveShop; 
     public playerInfo PlayerData;
 
-    
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +33,7 @@ public class purchaseItem : MonoBehaviour
         int TowerPrice = TowerObject.GetTowerPrice(); // get price
         if (PlayerData.GetMenuCurrency() >= TowerPrice) // if player can afford
         {
+            audioManager.PlaySFX(audioManager.Purchase);
             TowerObject.SaveTower(); // save the tower when purchased
             TowerObject.RemoveTower(); // remove the tower from ui
             PlayerData.ModifyMenuCurrency(-(TowerPrice)); // remove price from bal
@@ -35,8 +42,9 @@ public class purchaseItem : MonoBehaviour
         }
         else
         {
-         SaveShop.SaveGame();   // otherwise might as well save when cant afford
-         UnableToPurchaseScreen.SetActive(true); // Turn on unable to purchase canvas
+            audioManager.PlaySFX(audioManager.Denied);
+            SaveShop.SaveGame();   // otherwise might as well save when cant afford
+            UnableToPurchaseScreen.SetActive(true); // Turn on unable to purchase canvas
         }
     }
 

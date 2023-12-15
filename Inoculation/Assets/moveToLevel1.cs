@@ -10,6 +10,15 @@ public class moveToLevel1 : MonoBehaviour
     public GameObject scenePrompt;
     public PlayerController playerLogic;
     public saveGame SaveGame;
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+    
     void Start()
     {
         playerLogic = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -20,18 +29,21 @@ public class moveToLevel1 : MonoBehaviour
         int lastCompletedLevel = playerInfo.Instance.GetCompletedLevels();
         if ((sceneIndex - 3) <= lastCompletedLevel && other.tag == "Player") // Identify if the obj passed is a player
         {
+            audioManager.PlaySFX(audioManager.Prompt);
             scenePrompt.SetActive(true);
             playerLogic.moveSpeed = 0.0f;
         }
     }
     public void YesChoice()
     {
+        audioManager.PlaySFX(audioManager.Confirm);
         print("Switching Scenes");
         SaveGame.SaveGame(); // Saves Game on entry
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the level scene
     }
     public void NoChoice()
     {
+        audioManager.PlaySFX(audioManager.Decline);
         scenePrompt.SetActive(false);
         playerLogic.moveSpeed = 2.0f;
     }

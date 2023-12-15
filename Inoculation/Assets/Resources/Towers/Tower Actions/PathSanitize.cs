@@ -18,6 +18,13 @@ public class PathSanitize : Tower.TowerAction
 
     public Animator animator;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     public override void performAction(GameObject enemy)
     {
         // Unnecessary since the tower will be constantly active throughout the wave
@@ -66,6 +73,8 @@ public class PathSanitize : Tower.TowerAction
         {
             // Spawn sanitizer on the path
             GameObject splash = GameObject.Instantiate(sanitizer, this.transform);
+
+            audioManager.PlaySFX(audioManager.SanitizerDispense);
 
             float angle = Random.Range(0, 360);
             float length = Random.Range(1, 3);

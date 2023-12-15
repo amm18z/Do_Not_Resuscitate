@@ -20,11 +20,17 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] private GameObject tower4LockCover;
     [SerializeField] private GameObject tower5LockCover;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerInfo.Instance.SetLevelCurrency(200);
+        playerInfo.Instance.SetLevelCurrency(250);
 
         if (PlayerPrefs.GetInt("crossbow") == 0)
         {
@@ -68,10 +74,12 @@ public class TowerPlacement : MonoBehaviour
                     playerInfo.Instance.ModifyLevelCurrency(-(selectedObject.GetComponent<Tower>().getCost()));
                     selectedObject.GetComponent<Tower>().isPlaced = true;   //neccessary to make sure Tower5
                     PlaceObject();
+                    audioManager.PlaySFX(audioManager.PlaceTower);
                 }
                 else
                 {
                     Destroy(selectedObject);
+                    audioManager.PlaySFX(audioManager.Denied);
                 }
                 
             }

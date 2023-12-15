@@ -30,6 +30,13 @@ public class ProjectileShoot : Tower.TowerAction
     private LevelData level;
     private int speedMultiplier = 1;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         level = GameObject.Find("LevelData").GetComponent<LevelData>();
@@ -105,6 +112,19 @@ public class ProjectileShoot : Tower.TowerAction
         {
             // Shoot projectile towards the enemy
             GameObject shotProjectile = GameObject.Instantiate(projectile, shootPosition);
+
+            if (projectile.name == "projectile")
+            {
+                audioManager.PlaySFX(audioManager.CrossbowShot);
+            }
+            else if(projectile.name == "sodacan")
+            {
+                audioManager.PlaySFX(audioManager.SodaLaunch);
+            }
+            else if(projectile.name == "Bandage Bullet")
+            {
+                audioManager.PlaySFX(audioManager.BandaidShot);
+            }
 
             Tower mainTower = this.GetComponent<Tower>();
 

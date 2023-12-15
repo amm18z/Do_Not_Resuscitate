@@ -16,6 +16,13 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerInRange;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +36,7 @@ public class NPC : MonoBehaviour
         {
             if (!dialoguePanel.activeInHierarchy) 
             {
+                audioManager.PlaySFX(audioManager.Use);
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
