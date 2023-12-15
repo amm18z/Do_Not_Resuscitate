@@ -6944,6 +6944,11 @@ MonoBehaviour:
   Confirm: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   Decline: {fileID: 8300000, guid: 7cc057bed53baf34799f52aab3c84800, type: 3}
   Purchase: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
+  CrossbowShot: {fileID: 0}
+  SanitizerDispense: {fileID: 0}
+  SodaLaunch: {fileID: 0}
+  BandaidShot: {fileID: 0}
+  SodaExplosion: {fileID: 0}
 --- !u!4 &1590707305
 Transform:
   m_ObjectHideFlags: 0
@@ -8782,7 +8787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d904e34eb58bd47da890e8030ac7dba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDebugOn: 1
+  IsDebugOn: 0
   ResetButtonUi: {fileID: 1092204372}
   PlayerData: {fileID: 17868986}
   levelCurrencyText: {fileID: 613976917}
