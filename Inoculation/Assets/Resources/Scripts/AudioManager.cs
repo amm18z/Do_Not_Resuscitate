@@ -8,11 +8,14 @@ public class AudioManager : MonoBehaviour
 
     [Header("---------- Audio Clip ----------")]
     public AudioClip backgroundMusic;
-    public AudioClip sfx1;
-    public AudioClip sfx2;
-    public AudioClip sfx3;
-    public AudioClip sfx4;
-    public AudioClip sfx5;
+    public AudioClip Prompt;
+    public AudioClip PlaceTower;
+    public AudioClip Use;
+    public AudioClip EnemyHit;
+    public AudioClip Denied;
+    public AudioClip EnemyDeath;
+    public AudioClip Confirm;
+    public AudioClip Decline;
 
     private void Start()
     {

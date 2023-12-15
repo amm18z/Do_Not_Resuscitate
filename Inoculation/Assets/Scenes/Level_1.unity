@@ -3262,7 +3262,7 @@ GameObject:
   - component: {fileID: 670461412}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3283,10 +3283,11 @@ MonoBehaviour:
   sfxSource: {fileID: 185231553}
   backgroundMusic: {fileID: 8300000, guid: b2b1ad4d5aee91d43892aa02d60a7282, type: 3}
   sfx1: {fileID: 0}
-  sfx2: {fileID: 0}
-  sfx3: {fileID: 0}
-  sfx4: {fileID: 0}
-  sfx5: {fileID: 0}
+  PlaceTower: {fileID: 8300000, guid: 023ea3ddeaa8dd146b7633a0800e5a0e, type: 3}
+  Use: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
+  EnemyHit: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  Denied: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
+  EnemyDeath: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
 --- !u!4 &670461413
 Transform:
   m_ObjectHideFlags: 0
@@ -3812,7 +3813,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7997,12 +7998,20 @@ PrefabInstance:
       value: ChangeSpeedButtons
       objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
@@ -8016,6 +8025,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 193535559}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 670461412}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DecreaseSpeed
@@ -8033,6 +8050,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: ProjectileShoot, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -8045,12 +8066,24 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: e58d8bd078f188a4ba314e933b98528b, type: 3}
+    - target: {fileID: 645850190696372550, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3012214910461649568, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_Pivot.x
@@ -8133,9 +8166,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 776596574}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 670461412}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: IncreaseSpeed
@@ -8143,6 +8192,22 @@ PrefabInstance:
     - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: increaseGunSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: b83bf8726a7fac349a54389f0c57cda6, type: 3}
+    - target: {fileID: 5491685332914009288, guid: c1aec34465bed456a9d80236974edda0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8294,6 +8359,10 @@ PrefabInstance:
     - target: {fileID: 3427928566553478261, guid: a0f1a840b4b324e9aa363b8138fcf99d, type: 3}
       propertyPath: m_Name
       value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427928566553478261, guid: a0f1a840b4b324e9aa363b8138fcf99d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5353628115612592768, guid: a0f1a840b4b324e9aa363b8138fcf99d, type: 3}
       propertyPath: m_Pivot.x

@@ -8,6 +8,7 @@ TagManager:
   - NewLevel
   - Icon
   - tower
+  - Audio
   layers:
   - Default
   - TransparentFX

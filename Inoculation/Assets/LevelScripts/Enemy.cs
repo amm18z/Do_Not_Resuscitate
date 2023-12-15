@@ -19,17 +19,26 @@ public class Enemy : MonoBehaviour
     
     public Renderer renderer;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         renderer = GetComponent<Renderer>();
     }
     public void damage(int damagetaken)
     {
+        audioManager.PlaySFX(audioManager.EnemyHit);
         health -= damagetaken;
     }
 
     public void destroyEnemy()
     {
+        audioManager.PlaySFX(audioManager.EnemyDeath);
         GameObject.Destroy(this.gameObject);
     }
 
