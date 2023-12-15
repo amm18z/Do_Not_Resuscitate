@@ -316,6 +316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jimmy
       objectReference: {fileID: 0}
+    - target: {fileID: 6630513405204574077, guid: 7b7d5294987b14522844d9692c356083, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c36653fce688e7443b25d4cccac42942, type: 3}
     - target: {fileID: 8357772000618544056, guid: 7b7d5294987b14522844d9692c356083, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1989,7 +1993,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &462915474
@@ -4226,6 +4230,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a51218d7a0f3d704999e0689a67b95e2, type: 3}
     - target: {fileID: 7111158497405431498, guid: fe7d49ae979b442088b926207364444b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c36653fce688e7443b25d4cccac42942, type: 3}
+    - target: {fileID: 7111158497405431498, guid: fe7d49ae979b442088b926207364444b, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -5321,6 +5329,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6630513405204574077, guid: 7b7d5294987b14522844d9692c356083, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c36653fce688e7443b25d4cccac42942, type: 3}
     - target: {fileID: 8357772000618544056, guid: 7b7d5294987b14522844d9692c356083, type: 3}
       propertyPath: m_Type
       value: 0
@@ -5896,6 +5908,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a51218d7a0f3d704999e0689a67b95e2, type: 3}
+    - target: {fileID: 7111158497405431498, guid: fe7d49ae979b442088b926207364444b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c36653fce688e7443b25d4cccac42942, type: 3}
     - target: {fileID: 7111158497405431498, guid: fe7d49ae979b442088b926207364444b, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -6763,7 +6779,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6899,7 +6915,7 @@ GameObject:
   - component: {fileID: 1590707304}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6919,11 +6935,15 @@ MonoBehaviour:
   musicSource: {fileID: 1582568300}
   sfxSource: {fileID: 2093174468}
   backgroundMusic: {fileID: 8300000, guid: a4def238b97178c47ae0054de4d8b2ac, type: 3}
-  sfx1: {fileID: 0}
-  sfx2: {fileID: 0}
-  sfx3: {fileID: 0}
-  sfx4: {fileID: 0}
-  sfx5: {fileID: 0}
+  Prompt: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
+  PlaceTower: {fileID: 8300000, guid: 023ea3ddeaa8dd146b7633a0800e5a0e, type: 3}
+  Use: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
+  EnemyHit: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  Denied: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
+  EnemyDeath: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+  Confirm: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
+  Decline: {fileID: 8300000, guid: 7cc057bed53baf34799f52aab3c84800, type: 3}
+  Purchase: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
 --- !u!4 &1590707305
 Transform:
   m_ObjectHideFlags: 0
@@ -8420,6 +8440,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a51218d7a0f3d704999e0689a67b95e2, type: 3}
+    - target: {fileID: 7111158497405431498, guid: fe7d49ae979b442088b926207364444b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c36653fce688e7443b25d4cccac42942, type: 3}
     - target: {fileID: 7111158497405431498, guid: fe7d49ae979b442088b926207364444b, type: 3}
       propertyPath: m_Color.b
       value: 1

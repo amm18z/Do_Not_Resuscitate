@@ -1326,6 +1326,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 670461412}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c458b6714dab015479d507b21fd2cead, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1658129447}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadSceneOnClick
@@ -3282,12 +3294,20 @@ MonoBehaviour:
   musicSource: {fileID: 882162889}
   sfxSource: {fileID: 185231553}
   backgroundMusic: {fileID: 8300000, guid: b2b1ad4d5aee91d43892aa02d60a7282, type: 3}
-  sfx1: {fileID: 0}
+  Prompt: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
   PlaceTower: {fileID: 8300000, guid: 023ea3ddeaa8dd146b7633a0800e5a0e, type: 3}
   Use: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
   EnemyHit: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
   Denied: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
   EnemyDeath: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+  Confirm: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
+  Decline: {fileID: 8300000, guid: 7cc057bed53baf34799f52aab3c84800, type: 3}
+  Purchase: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
+  CrossbowShot: {fileID: 8300000, guid: 663801cc20179d64aae2259473647e34, type: 3}
+  SanitizerDispense: {fileID: 8300000, guid: fd25a15f9797641458336cccfb445343, type: 3}
+  SodaLaunch: {fileID: 8300000, guid: ab63244e652790b4684b8ad6f404e6c3, type: 3}
+  BandaidShot: {fileID: 8300000, guid: d15dbad0b3cdaab42b98301447dfca5c, type: 3}
+  SodaExplosion: {fileID: 8300000, guid: 8a42351212931704b828462424a3523a, type: 3}
 --- !u!4 &670461413
 Transform:
   m_ObjectHideFlags: 0

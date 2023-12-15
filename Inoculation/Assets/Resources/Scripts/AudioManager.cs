@@ -16,6 +16,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip EnemyDeath;
     public AudioClip Confirm;
     public AudioClip Decline;
+    public AudioClip Purchase;
+    public AudioClip CrossbowShot;
+    public AudioClip SanitizerDispense;
+    public AudioClip SodaLaunch;
+    public AudioClip BandaidShot;
+    public AudioClip SodaExplosion;
 
     private void Start()
     {

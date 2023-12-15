@@ -30,7 +30,7 @@ public class TowerPlacement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerInfo.Instance.SetLevelCurrency(200);
+        playerInfo.Instance.SetLevelCurrency(250);
 
         if (PlayerPrefs.GetInt("crossbow") == 0)
         {

@@ -474,11 +474,20 @@ MonoBehaviour:
   musicSource: {fileID: 1993478717}
   sfxSource: {fileID: 1895848898}
   backgroundMusic: {fileID: 8300000, guid: 49f9cf39ff4d96049ac35fe1cd009afe, type: 3}
-  sfx1: {fileID: 0}
-  sfx2: {fileID: 0}
-  sfx3: {fileID: 0}
-  sfx4: {fileID: 0}
-  sfx5: {fileID: 0}
+  Prompt: {fileID: 0}
+  PlaceTower: {fileID: 0}
+  Use: {fileID: 0}
+  EnemyHit: {fileID: 0}
+  Denied: {fileID: 0}
+  EnemyDeath: {fileID: 0}
+  Confirm: {fileID: 0}
+  Decline: {fileID: 0}
+  Purchase: {fileID: 0}
+  CrossbowShot: {fileID: 0}
+  SanitizerDispense: {fileID: 0}
+  SodaLaunch: {fileID: 0}
+  BandaidShot: {fileID: 0}
+  SodaExplosion: {fileID: 0}
 --- !u!4 &627727170
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,7 +1793,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
