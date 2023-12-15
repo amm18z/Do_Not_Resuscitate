@@ -61,7 +61,7 @@ public class Tower : MonoBehaviour
 
         towerAction.SetAnimationDelay(shootingDelay);
         // Rotate the tower towards chosen enemy and perform action
-        if (chosen_enemy != null)
+        if (chosen_enemy != null && id != 2) // bandaid solution so that tower2 "sanitizer dispenser" doesn't rotate when enemies come into range
         {
             Vector2 shootDirection = chosen_enemy.transform.position - this.transform.position;
             shootDirection = shootDirection.normalized;
