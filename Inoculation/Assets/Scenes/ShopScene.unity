@@ -8863,7 +8863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d904e34eb58bd47da890e8030ac7dba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDebugOn: 1
+  IsDebugOn: 0
   ResetButtonUi: {fileID: 1092204372}
   PlayerData: {fileID: 17868986}
   levelCurrencyText: {fileID: 613976917}
