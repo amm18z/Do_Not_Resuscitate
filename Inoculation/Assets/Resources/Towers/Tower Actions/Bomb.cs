@@ -17,6 +17,13 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private GameObject explosion;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +50,7 @@ public class Bomb : MonoBehaviour
             // Enable bomb collider
             collider.enabled = true;
             explosion.SetActive(true);
+            audioManager.PlaySFX(audioManager.SodaExplosion);
         }
         else if (age >= maxAge + 0.5f)
         {

@@ -32,6 +32,9 @@ public class Tower : MonoBehaviour
 
     private List<Enemy> enemy_queue;
 
+    public bool isPlaced = false; // added this so that tower5 can only actionboost placed towers
+    public bool isBoosted = false; // added this so that tower5 will not infinitely increase the speed of towers
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +61,7 @@ public class Tower : MonoBehaviour
 
         towerAction.SetAnimationDelay(shootingDelay);
         // Rotate the tower towards chosen enemy and perform action
-        if (chosen_enemy != null)
+        if (chosen_enemy != null && id != 2) // bandaid solution so that tower2 "sanitizer dispenser" doesn't rotate when enemies come into range
         {
             Vector2 shootDirection = chosen_enemy.transform.position - this.transform.position;
             shootDirection = shootDirection.normalized;
@@ -136,5 +139,20 @@ public class Tower : MonoBehaviour
         }
 
         return prefab;
+    }
+
+    public void modifyShootingDelay(float modifyVal)
+    {
+        shootingDelay = modifyVal;
+    }
+
+    public void multIncreaseShootingDelay(float multVal)
+    {
+        shootingDelay *= multVal;
+    }
+
+    public void divDecreaseShootingDelay(float divVal)
+    {
+        shootingDelay /= divVal;
     }
 }

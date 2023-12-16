@@ -11,6 +11,13 @@ public class moveToShop : MonoBehaviour
     public PlayerController playerLogic;
     public saveGame game;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         playerLogic = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -20,19 +27,22 @@ public class moveToShop : MonoBehaviour
         print("Trigger Entered"); // For Debug
         if (other.tag == "Player") // Identify if the obj passed is a player
         {
-           scenePrompt.SetActive(true);
+            audioManager.PlaySFX(audioManager.Prompt);
+            scenePrompt.SetActive(true);
             playerLogic.moveSpeed = 0.0f;
         }
         
     }
     public void YesChoice()
     {
+        audioManager.PlaySFX(audioManager.Confirm);
         game.SaveGame();
         print("Switching Scenes");
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single); // Load the shop scene
     }
     public void NoChoice()
     {
+        audioManager.PlaySFX(audioManager.Decline);
         scenePrompt.SetActive(false);
         playerLogic.moveSpeed = 2.0f;
     }

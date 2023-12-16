@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 8638543680753623175}
   - component: {fileID: 6458132004504439449}
   - component: {fileID: 7374592770148255434}
+  - component: {fileID: 4476092765439373339}
   m_Layer: 0
   m_Name: tower_1
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,10 +135,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7374592770148255434}
   id: 1
-  strength: 5
+  strength: 2
   cost: 100
   towerAction: {fileID: 8638543680753623175}
-  shootingDelay: 0.25
+  shootingDelay: 0.35
+  isPlaced: 0
 --- !u!114 &8638543680753623175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914cdf3b1436f64b90b5c8ab88eac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 4624810822423018294}
   projectile: {fileID: 3985466440694231804, guid: 8cf9050cd2d7e83469a0414f08d28ace, type: 3}
   shootPosition: {fileID: 1206200759817691441}
-  projectileSpeed: 16
-  reloadDelay: 1
+  projectileSpeed: 10
+  reloadDelay: 0.9
   animator: {fileID: 7374592770148255434}
 --- !u!58 &6458132004504439449
 CircleCollider2D:
@@ -211,3 +214,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &4476092765439373339
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798835426779528506}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
