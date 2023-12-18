@@ -9057,7 +9057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstTimeGameObject: {fileID: 138614897}
   CanvasFirstTime: {fileID: 1467349221}
-  DebugMode: 1
+  DebugMode: 0
 --- !u!1 &1489676448
 GameObject:
   m_ObjectHideFlags: 0
