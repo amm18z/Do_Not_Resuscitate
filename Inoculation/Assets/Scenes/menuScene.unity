@@ -1784,6 +1784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 2066163419}
   player: {fileID: 127749894}
+  audio: {fileID: 1998005632}
 --- !u!4 &319527973
 Transform:
   m_ObjectHideFlags: 0

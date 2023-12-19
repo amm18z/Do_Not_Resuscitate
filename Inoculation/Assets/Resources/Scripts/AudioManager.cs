@@ -28,15 +28,21 @@ public class AudioManager : MonoBehaviour
     
     private void Start()
     {
+        
         musicSource.clip = backgroundMusic;
         musicSource.Play();
     }
 
+    public float GetVolume()
+    {
+        return musicSource.volume;
+    }
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
     }
-
+        
+    
     
     public void changeVolume(float newVolume)
     {
