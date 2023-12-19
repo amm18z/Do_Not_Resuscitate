@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip BandaidShot;
     public AudioClip SodaExplosion;
 
+    
+    
     private void Start()
     {
         musicSource.clip = backgroundMusic;
@@ -32,5 +35,12 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
+    }
+
+    
+    public void changeVolume(float newVolume)
+    {
+        musicSource.volume = newVolume;
+        sfxSource.volume = newVolume;
     }
 }
