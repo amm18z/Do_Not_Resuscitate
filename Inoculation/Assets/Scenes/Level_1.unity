@@ -1815,7 +1815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &465841109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3794,7 +3794,7 @@ MonoBehaviour:
   - {fileID: 1182357806}
   - {fileID: 890792081}
   - {fileID: 1459527112}
-  waveCount: 30
+  waveCount: 10
   levelEnemyType: {fileID: 11400000, guid: 14f272f380cdcc0489a5289eddac7def, type: 2}
   enemyIndexLower: 0
   enemyIndexUpper: 2

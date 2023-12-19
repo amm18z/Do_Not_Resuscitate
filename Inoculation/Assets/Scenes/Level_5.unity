@@ -3300,7 +3300,7 @@ MonoBehaviour:
   - {fileID: 246355618}
   - {fileID: 455570608}
   - {fileID: 1707905292}
-  waveCount: 30
+  waveCount: 15
   levelEnemyType: {fileID: 11400000, guid: 14f272f380cdcc0489a5289eddac7def, type: 2}
   enemyIndexLower: 0
   enemyIndexUpper: 2
