@@ -197,7 +197,7 @@ public class LevelData : MonoBehaviour
     IEnumerator runWave()
     {
         // Wave strength will be the counter for how many enemies are spawned or their total strength
-        while(waveStrengths[currentWave] > 0)
+        while(waveStrengths[currentWave - 1] > 0)
         {
             // Retrieves the list of enemy prefabs from the enemy type for the level
             List<GameObject> enemyPrefabs = levelEnemyType.getEnemyPrefabs();
@@ -220,7 +220,7 @@ public class LevelData : MonoBehaviour
             Enemy enemyData = spawnedEnemy.GetComponent<Enemy>();
 
             // Removes the enemy strength from the current wave strength
-            waveStrengths[currentWave] -= enemyData.getStrength();
+            waveStrengths[currentWave - 1] -= enemyData.getStrength();
 
             // Waits for 1 second before continuing the loop
             yield return new WaitForSeconds(baseEnemySpawningDelay - (5.5f * (float)currentWave/waveCount));
