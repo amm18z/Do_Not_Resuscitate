@@ -9,6 +9,7 @@ public class saveGame : MonoBehaviour
     public playerInfo playerData;
 
     public GameObject player;
+    public AudioManager audio;
 
     public void Start()
     {
@@ -42,7 +43,8 @@ public class saveGame : MonoBehaviour
         PlayerPrefs.SetInt("levelCurr", playerData.GetLevelCurrency());
         PlayerPrefs.SetInt("completedLevels", playerData.GetCompletedLevels());
         PlayerPrefs.SetInt("hasPlayed", 1); // the player has played game
-
+        PlayerPrefs.SetFloat("audioLevels", audio.GetVolume());
+        
     }
 
     public void LoadGame()
@@ -59,7 +61,7 @@ public class saveGame : MonoBehaviour
         // set levels completed
         playerData.SetCompletedLevels(PlayerPrefs.GetInt("completedLevels"));
         playerData.SetHasLevel(PlayerPrefs.GetInt("levelIntro"));
-
+        audio.changeVolume(PlayerPrefs.GetFloat("audioLevels"));
     }
 
     public void AddMoney()

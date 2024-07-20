@@ -100,6 +100,8 @@ public class TowerPlacement : MonoBehaviour
 
     public void SelectObject(int index)
     {
+        if (selectedObject != null) return;
+
         selectedObject = Instantiate(objects[index], pos, Quaternion.identity);
         TowerIsAwake(false);
     }

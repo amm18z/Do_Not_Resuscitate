@@ -5,10 +5,11 @@ using UnityEngine;
 public class gameSaveShop : MonoBehaviour
 {
     public playerInfo playerData; // set the save data to this obj
+    public AudioManager audio;
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoadGame();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class gameSaveShop : MonoBehaviour
         // easier in tower info, so if need modification to tower check that
         PlayerPrefs.SetInt("menuCurr", playerData.GetMenuCurrency());
         PlayerPrefs.SetInt("levelCurr", playerData.GetLevelCurrency());
+        PlayerPrefs.SetFloat("audioLevels", audio.GetVolume());
         
     }
 
@@ -33,5 +35,6 @@ public class gameSaveShop : MonoBehaviour
         playerData.SetMenuCurrency(PlayerPrefs.GetInt("menuCurr"));
         playerData.SetLevelCurrency(PlayerPrefs.GetInt("levelCurr"));
         playerData.SetHas(PlayerPrefs.GetInt("Intro")); // See if player has gone to 
+        audio.changeVolume(PlayerPrefs.GetFloat("audioLevels"));
     }
 }
